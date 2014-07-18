@@ -1,0 +1,494 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks]{hyperref}
+\usepackage{verbatim}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WTSI Software Policy
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{
+Wellcome Trust Sanger Institute \\
+Software Policy
+}
+\author{WTSI Informatics Committee}
+\date{July 2014}
+
+\maketitle
+
+% name of Director of Corporate Services
+\newcommand{\docsperson}[0]{Martin Dougherty} 
+
+% fixed-width (typewriter) face for filenames
+\newcommand{\filename}[1]{\texttt{#1}} 
+
+% smaller text size for boilerplate and keep on same page
+\newenvironment{boilerplate}{\bgroup\small\samepage }{\egroup} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{WTSI policy on software copyright and licensing}
+It is a condition of employment or visiting/hosted scientist status at the Wellcome Trust 
+Sanger Institute (WTSI) that all software written as part of your work at the institute 
+should have copyright assigned to Genome Research Ltd (GRL). 
+ 
+Our standard policy is that we are happy to make GRL software publicly available with 
+source code under a free software license (as defined by the free software foundation 
+\url{http://www.fsf.org/licensing/licenses}), although other alternatives may be possible in 
+particular circumstances. Generally, software supporting published analysis should be 
+released by publication at the very latest. This document describes how this policy 
+should be interpreted and implemented. 
+ 
+A significant advantage for WTSI staff in releasing code in this way is that it guarantees 
+them indefinite access to their work, even if they move institute. There have been 
+notable examples in academia where individuals have been unable to continue working 
+on software that they wrote because of licensing restrictions.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Choice of license
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Choosing between acceptable licenses}
+
+All acceptable licenses considered here require the user of the code (referred to 
+subsequently as the licensee) to maintain attribution and disclaimers in any versions of 
+the code which they redistribute. The choice between alternative licenses depends on 
+what additional obligations you wish to place on the licensee. There are three additional obligations to consider: 
+
+\begin{enumerate}
+\item The licensee is additionally required to distribute any modified versions of the 
+source code under the same license terms. 
+\item The licensee is required to adopt the same license for any additional code that it 
+is combined with to create a single piece of software. 
+\item The licensee is additionally required to distribute the source code which 
+corresponds to the version of the software running on a network server to all 
+users interacting with the software remotely through a computer network (if the 
+modified software supports such interaction) at no charge. 
+\end{enumerate}
+
+If the 1st and 3rd obligations are \textbf{not} required, a licensee is free to take the code, modify 
+it and redistribute it under any terms that they wish, including commercially, only 
+maintaining attribution and disclaimers to the original authors. This may not be a 
+problem, since it does not interfere with any continued distribution of code by GRL, 
+however it may mean external code improvements cannot be incorporated by GRL into 
+its original code. Reasons for not requiring this obligation could be when you wish the 
+code to be as widely adopted as possible, including within companies and when you do 
+not fear a commercial competitor. The \textbf{Modified-BSD license} (as used by X11 
+consortium) is appropriate in this case. Ensembl uses a variant of this license, which 
+includes additional clauses related to the Ensembl name which is a registered trade 
+mark. 
+ 
+If the 1st obligation is required but the 2nd and 3rd obligations are \textbf{not}, a licensee is free 
+to use the code as a component of a larger project but is free to distribute that larger 
+project as a whole under what ever terms they wish. Choosing this combination of 
+options is useful in cases where the project is a software library (e.g. biojava, bioperl) 
+and the authors wish to ensure all library code is distributed under the same license, 
+but want the library as a whole to be as widely used as possible, so do not want to 
+restrict what software it is used as a component of. To enforce only the 1st obligation, 
+the \textbf{LGPL license} is appropriate. This license obliges a licensee to enable the use of the 
+licensee's program with whatever version of the LGPLed library a user sees fit, 
+including one that that user has just modified themself. 
+
+To enforce the 1st and 2nd obligation but not the 3rd, (such as is done by many high 
+profile projects such as mysql and many self contained Sanger projects), the \textbf{GPL 
+license} is appropriate. If your software provides user interaction over a network (such 
+as an application with a web-based user-interface) then you may also consider requiring 
+the 3rd obligation, in which case the \textbf{AGPL license} may be appropriate. Unless your 
+project fits with one of the situations described above, the GPL (or AGPL) license is the 
+most generally applicable license to use. It is also safe to use the AGPL on software that 
+does not yet have any remote user interaction (e.g. a web interface) if you want to 
+ensure that any future use of the software that does provide remote user interaction will 
+be required to provide any modifications that have been made to your source code to 
+the users of that service (this would not be required under the GPL if the modified 
+version of your software is only run on a server but not distributed to others). 
+ 
+The standard boilerplate header for each of these licenses is given in Appendix A, 
+which in the case of LGPL, GPL and AGPL includes a link to the primary web site 
+documenting the full license. Any of these licenses is acceptable as satisfying 
+requirements above, so long as the copyright is assigned to Genome Research Limited 
+and the author(s) names are given.
+
+Given the legal nature of these boilerplate headers they must not be edited. If there is an 
+additional license requirement that requires modification or addition to the text or the 
+adoption of a different free software compatible license, this must be agreed with the 
+Informatics Committee (IC) first and in consultation with the Director of Corporate 
+Services (\docsperson).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Application of license
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Applying the license}
+
+Once you have chosen the license you wish to use, you must apply the license so that 
+people can see it. For software that is made available outside the Institute, at a 
+minimum you must:
+
+\begin{itemize}
+\item state on webpages providing access to the software which license is applied 
+\item provide the full text of the license in the root directory of any source code 
+distribution (usually in a file called \filename{LICENSE.TXT}) 
+\item insert the appropriate header (created from one of standard boilerplates given in 
+the Appendix A) at or near the start of each separate source code file. Since these 
+boilerplates are legal statements it is important that the text is not edited in any 
+way beyond substituting the required names and dates.
+\item provide the full text of the license in the root directory of any non-source project 
+distributions (usually in a file called \filename{LICENSE.TXT}). 
+\item provide basic documentation in the root directory of any source code 
+distribution, and include all clauses found in Appendix B in that documentation 
+(usually in a file called \filename{README.TXT}). 
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Old code
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Old code not conforming to these conditions}
+
+Any code written by GRL employees or Sanger visiting/hosted scientists that is 
+distributed on our web or ftp site should contain an approved header statement as 
+outlined above. If there is no such copyright and licensing statement now, or what 
+there is does not comply, then this policy should be applied and the code amended as 
+appropriate. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% External projects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Collaborations with others, and contributions to open source projects}
+
+The following considerations apply when GRL employees or Sanger visiting/hosted 
+scientists make substantial contributions to code maintained in collaboration with 
+others outside the institute: 
+
+\begin{itemize}
+\item If the code is made publicly available under one of the standard acceptable open 
+source licenses, or another license and header text that has been approved as 
+described above, then again the line manager can approve contribution to the 
+project, so long as a copyright statement is in place and the author's contribution 
+is acknowledged. The copyright statement should include GRL as one of the 
+copyright holders if a substantial fraction (say more than 25\% of the file) was 
+written by a GRL employee or Sanger visiting/hosted scientist. 
+\item If the code is developed as part of a research collaboration, and the software itself 
+is a primary aim of the collaboration, then we would expect to require the 
+software to be made widely available under an agreed license. If the 
+collaboration is primarily about other matters, such as the generation and 
+analysis of data, then it is acceptable for the software not to be distributed 
+outside the collaboration, but even in this case a copyright statement and 
+authorship attribution are required.
+\item There may be cases where other arrangements are required, for example in 
+collaborations with instrument manufacturers. In these cases a more formal 
+agreement is required, which needs to be approved by the Director of Corporate 
+Services who may consult the Wellcome Trust.
+\item In some cases we use external software and either find and fix a bug, or make a 
+useful modification, and want to feed that back to the author/copyright holder. 
+Small bug fixes or enhancements of less than 100 lines or so of code are exempt 
+from the provisions of this document. Larger contributions can also be made if 
+authorised by an IC member. 
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Signing-off 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Contributions to open source projects that require ``signing off''}
+
+Some open source projects require code to be ``signed-off'' with a declaration that says ``I 
+wrote this code and am authorized to contribute it to the project'' (see section 5 in 
+\url{http://linux.yyz.us/patch-format.html} for an example). The Director of Corporate 
+Services (\docsperson) can authorise code to be contributed in this fashion. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Policy scope
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scope}
+
+This policy applies to code you develop at work or at home when engaged in your 
+work, whether on Sanger's or your own computer. If you wish to develop software in 
+the general area of your work for which you wish to retain copyright with a view to 
+commercialisation, you should discuss this beforehand with the Director of Corporate 
+Services, or your IC member who would be expected to raise it with the Director of 
+Corporate Services.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commercialisation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Commercialisation of GRL software}
+
+There are precedents where GRL software has been distributed under a commercial 
+license, i.e. where payment has been received for use of the software. It is possible to 
+distribute commercially software that is also available under an open source license, for 
+example when someone wants to modify it and sell the modified version in a way 
+incompatible with the open source license. If any GRL employee or Sanger 
+visiting/hosted scientist wishes to pursue such a possibility, they should approach the 
+Director of Corporate Services, keeping the IC informed. 
+
+
+\appendix
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix A: source code boilerplate
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Boilerplate headers for source code files}
+
+The following are boilerplate headers that should be used, substituting DATES, PROGRAM-NAME, PROGRAM-AUTHOR and EMAIL as appropriate.
+
+Note 1: The DATES in the copyright notice should be a comma-delimited list of years in which 
+copyrightable contributions were made to the software. If and only if every year within a range 
+of years really is a copyrightable year, you may choose to shorten such a range by using a `-' 
+character between the first and last copyrightable years in the range. Multiple such ranges may 
+be specified as elements of the comma-separated list, but it is also acceptable to list out each 
+year individually. This line in the license should be updated every time a copyrightable 
+contribution is made to the software. For example, if software was first written in 2005, then 
+`2005' would be an appropriate value for DATES. If no substantial contributions were made 
+during 2006, but new code was written in 2007, then DATES could be `2005, 2007' but should 
+not be `2005-2007' since no copyrightable contributions were made in 2006. If a license file 
+specified DATES as `2005, 2007-2009, 2011-2012' then the contributor would be equivalent to 
+specifying DATES as `2005, 2007, 2008, 2009, 2011, 2012' and it indicates that no copyrightable 
+contributions were made in 2006 or 2010. It is important not to assert copyright for years in 
+which no copyrightable contributions were made since this could undermine our rights to 
+enforce the copyright. 
+ 
+Note 2: Including the email address (EMAIL) is optional. 
+
+\subsection{GPL license (for software consisting of multiple source files}
+
+\begin{boilerplate}
+\begin{verbatim}
+Copyright (c) DATES Genome Research Ltd. 
+ 
+Author: PROGRAM-AUTHOR <EMAIL> 
+This file is part of PROGRAM-NAME. 
+PROGRAM-NAME is free software: you can redistribute it and/or modify it under 
+the terms of the GNU General Public License as published by the Free Software 
+Foundation; either version 3 of the License, or (at your option) any later 
+version. 
+ 
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more 
+details. 
+ 
+You should have received a copy of the GNU General Public License along with 
+this program. If not, see <http://www.gnu.org/licenses/>. 
+\end{verbatim}
+\end{boilerplate}
+
+\subsection{GPL license (for software consisting of only one source file)}
+\begin{boilerplate}
+\begin{verbatim}
+Copyright (c) DATES Genome Research Ltd. 
+Author: PROGRAM-AUTHOR <EMAIL> 
+This program is free software: you can redistribute it and/or modify it under 
+the terms of the GNU General Public License as published by the Free Software 
+Foundation; either version 3 of the License, or (at your option) any later 
+version. 
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more 
+details. 
+You should have received a copy of the GNU General Public License along with 
+this program. If not, see <http://www.gnu.org/licenses/>. 
+\end{verbatim}
+\end{boilerplate}
+
+\subsection{LGPL license (for software consisting of multiple source files)}
+\begin{boilerplate}
+\begin{verbatim}
+Copyright (c) DATES Genome Research Ltd. 
+Author: PROGRAM-AUTHOR <EMAIL> 
+This file is part of PROGRAM-NAME. 
+PROGRAM-NAME is free software: you can redistribute it and/or modify it under 
+the terms of the GNU Lesser General Public License as published by the Free 
+Software Foundation; either version 3 of the License, or (at your option) any 
+later version. 
+ 
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more 
+details. 
+ 
+You should have received a copy of the GNU Lesser General Public License along 
+with this program. If not, see <http://www.gnu.org/licenses/>. 
+\end{verbatim}
+\end{boilerplate}
+
+\subsection{LGPL license (for software consisting of only one source file)}
+\begin{boilerplate}
+\begin{verbatim}
+Copyright (c) DATES Genome Research Ltd. 
+Author: PROGRAM-AUTHOR <EMAIL> 
+This program is free software: you can redistribute it and/or modify it under 
+the terms of the GNU Lesser General Public License as published by the Free 
+Software Foundation; either version 3 of the License, or (at your option) any 
+later version. 
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more 
+details. 
+You should have received a copy of the GNU Lesser General Public License 
+along with this program. If not, see <http://www.gnu.org/licenses/>. 
+\end{verbatim}
+\end{boilerplate}
+
+\subsection{AGPL license (for software consisting of multiple source files)}
+\begin{boilerplate}
+\begin{verbatim}
+Copyright (c) DATES Genome Research Ltd. 
+Author: PROGRAM-AUTHOR <EMAIL> 
+This file is part of PROGRAM-NAME. 
+PROGRAM-NAME is free software: you can redistribute it and/or modify it under 
+the terms of the GNU Affero General Public License as published by the Free 
+Software Foundation; either version 3 of the License, or (at your option) any 
+later version. 
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more 
+details. 
+You should have received a copy of the GNU Affero General Public License 
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+\end{verbatim}
+\end{boilerplate}
+
+\subsection{AGPL license (for software consisting of only one source file)}
+\begin{boilerplate}
+\begin{verbatim}
+Copyright (c) DATES Genome Research Ltd. 
+Author: PROGRAM-AUTHOR <EMAIL> 
+This program is free software: you can redistribute it and/or modify it under 
+the terms of the GNU Affero General Public License as published by the Free 
+Software Foundation; either version 3 of the License, or (at your option) any 
+later version. 
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more 
+details. 
+You should have received a copy of the GNU Affero General Public License 
+along with this program. If not, see <http://www.gnu.org/licenses/>. 
+\end{verbatim}
+\end{boilerplate}
+
+\subsection{Modified-BSD license}
+\begin{boilerplate}
+\begin{verbatim}
+Copyright (c) DATES Genome Research Ltd. 
+Author: PROGRAM-AUTHOR <EMAIL> 
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met: 
+ 
+ 1. Redistributions of source code must retain the above copyright notice, 
+this list of conditions and the following disclaimer. 
+ 2. Redistributions in binary form must reproduce the above copyright 
+notice, this list of conditions and the following disclaimer in the 
+documentation and/or other materials provided with the distribution. 
+ 3. Neither the names Genome Research Ltd and Wellcome Trust Sanger 
+Institute nor the names of its contributors may be used to endorse or promote 
+products derived from this software without specific prior written permission. 
+ 
+THIS SOFTWARE IS PROVIDED BY GENOME RESEARCH LTD AND CONTRIBUTORS "AS IS" AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+DISCLAIMED. IN NO EVENT SHALL GENOME RESEARCH LTD OR CONTRIBUTORS BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+\end{verbatim}
+\end{boilerplate}
+
+\subsection{GPL example}
+
+\begin{boilerplate}
+\begin{verbatim}
+Copyright (c) 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 
+2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 Genome Research Ltd. 
+ 
+Author: A.N. Other <a.n.other@sanger.ac.uk> 
+ 
+This file is part of uber_wtsi_program. 
+ 
+uber_wtsi_program is free software: you can redistribute it and/or modify it 
+under the terms of the GNU General Public License as published by the Free 
+Software Foundation; either version 3 of the License, or (at your option) any 
+later version.  
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more 
+details. 
+ 
+You should have received a copy of the GNU General Public License along with 
+this program. If not, see <http://www.gnu.org/licenses/>. 
+\end{verbatim}
+\end{boilerplate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix B: documentation boilerplate
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Boilerplate to include in documention}
+
+The following boilerplate should be included somewhere in the 
+documentation distributed with the software. It need not be at the start of a 
+file (which would be a good place to reiterate the name of the software, to 
+describe what it does, and to describe where to find additional documentation 
+on installation and use of the software), but must be included somewhere in 
+the documentation. 
+
+\begin{verbatim}
+The usage of a range of years within a copyright statement contained within 
+this distribution should be interpreted as being equivalent to a list of years 
+including the first and last year specified and all consecutive years between 
+them. For example, a copyright statement that reads `Copyright (c) 2005, 2007-
+2009, 2011-2012' should be interpreted as being identical to a statement that 
+reads `Copyright (c) 2005, 2007, 2008, 2009, 2011, 2012' and a copyright 
+statement that reads `Copyright (c) 2005-2012' should be interpreted as being 
+identical to a statement that reads `Copyright (c) 2005, 2006, 2007, 2008, 
+2009, 2010, 2011, 2012'." 
+\end{verbatim}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document history
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Document history}
+
+\begin{tabular}{|c|c|p{6cm}|}
+\hline
+\textbf{version (date)}	& \textbf{author}	& \textbf{changes} \\
+\hline
+v1 (11 Oct 2006)		& Richard Durbin	& \parbox{6cm}{
+} \\
+\hline
+v2 (20 Sep 2007)		& Tim Hubbard		& \parbox{6cm}{
+} \\
+\hline
+v3 (3 Dec 2009)		& Tim Hubbard		& \parbox{6cm}{
+} \\
+\hline
+v4 (23 Dec 2010) 		& Tim Hubbard		& \parbox{6cm}{
+clarifications: policy statement; section 1 (LGPL license description). \\
+amendments: Appendix 3. (Modified-BSD license text) \\
+} \\
+\hline
+v5 (4 May 2012)		& Tim Hubbard		& \parbox{6cm}{
+clarifications: policy statement. \\
+amendments: AGPL licenses added, Appendix 3. (boilerplate instructions) \\
+} \\
+\hline
+v6 (18 July 2014)		& Joshua Randall	& \parbox{6cm}{
+amendments: updated Director of Corporate Services. \\
+formatting: converted to LaTeX, consolidated version/author history. \\
+} \\
+\hline
+\end{tabular}
+
+
+\end{document}
