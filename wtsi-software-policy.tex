@@ -44,10 +44,13 @@ Software Policy
 \let\stdsection\section
 \renewcommand\section{\newpage\stdsection}
 
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
-%% The policy
+%% Policy requirements
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,28 +85,24 @@ they write to GRL or to obtain a specific exception to retain or assign copyrigh
 otherwise.
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Public release in advance of publication
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Release publicly in advance of publication}
 
-\par This policy does not require staff to release software to anyone outside of 
-the Institute, with the exception of software that supports published work and which 
-is authored by GRL employees (e.g. software implementing methods described 
-in a methods paper, software presented in an application note, software used in 
-analysis and/or data processing for a research paper describing the results of 
-those analyses and processing, etc.). Such software must be released 
-publicly using an acceptable license (see section \ref{section:policy.licenses}) 
-by the time of the related publication at the very latest. 
-
-
+\par Software that supports published work authored by GRL employees 
+(e.g. software implementing methods described in a methods paper, software 
+presented in an application note, software used in analysis and/or data 
+processing for a research paper describing the results of those analyses and 
+processing, etc.) must be released publicly using an acceptable license 
+(see section \ref{section:policy.licenses}) by the time of the related publication 
+at the very latest. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Acceptable licenses
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Release using an acceptable license}
+\subsection{Release using an acceptable free software license}
 \label{section:policy.licenses}
 \par Software under GRL copyright may be distributed outside of 
 the Institute under any free software license as defined by the Free 
@@ -124,9 +123,11 @@ or \url{http://sourceforge.net}), the original author(s) should, in conjunction 
 line management, choose a free software license and apply it to the source code 
 according to the best practices for that particular license 
 (see section \ref{section:impnotes.recommended} for a set of recommended 
-licenses along with best practices for applying them). They do not have to choose 
-one of the recommended licenses, but if they do not, they must make sure they 
-understand and correctly apply the license of their choice. 
+licenses along with best practices for applying them). Staff do not have to choose 
+one of the recommended licenses, but if they do not, they must make sure that it 
+is a free software license, that they understand the requirements of the license, 
+and that it is correctly applied to the source code in a manner consistent with 
+this policy. 
 
 \par Staff must make each subsequent releases of a particular piece of software 
 under the same license as the previous release, unless the terms of the previous 
@@ -140,13 +141,15 @@ software under terms that might conflict with the intentions of the original
 authors or undermine potential commercialisation opporuntities for GRL. 
 
 \par Any staff member(s) who wish to re-release software which is under GRL 
-copyright under a new license not compatible with the previous release must 
+copyright under a new license not compatible with the previous release should 
 apply to the IC for permission to release it under a different license (this would 
 include other acceptable free software licenses as well as alternative licenses 
 that otherwise would not be acceptable, including nonfree licensing 
-agreements). The IC's interest in considering such an application should be 
-to ensure that all relevant stakeholders (including staff involved in the creation 
-of the software) are consulted and will involve the \exectitle\ if necessary to 
+agreements). The IC's primary interest in considering such an application 
+should be to ensure that the proposed license is appropriate and that it serves 
+well the interests of the Institute and the wider community. The IC should also 
+ensure that all relevant stakeholders (including staff involved in the creation of 
+the software) are consulted and will involve the \exectitle\ if necessary to 
 ascertain whether the change of license could effect commercialisation 
 arrangements. 
 
@@ -159,37 +162,41 @@ outcome by allowing all software to be made publicly available under a free
 software license. 
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Respect copyright and protect GRL copyright
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Respect copyright and protect GRL copyright}
 \label{section:policy.protection}
 
 \par Staff must respect the copyright interests of others, in particular when producing 
-software which falls under GRL copyright. 
-%Were GRL copyrighted code to be found 
-%to be infringing on the copyright of others, reputational damage to the Institute could 
-%occur, and the copyright status of our other software may be called into question. 
+software which falls under GRL copyright. Were GRL copyrighted code to be found 
+to be infringing on the copyright of others, reputational damage to the Institute could 
+occur, and the copyright status of our other software may be called into question. 
 
-\par %In general, it is good software practice to reuse code, and in many cases there 
-%are good free software libraries that are available foir incorporation into other 
-%software. 
-However, staff should take care not to to take code from other sources 
-and incorporate it into software under GRL copyright (whether by direct copying, 
-some derivation or translation, or even linking), unless:
+\par In general, it is good development practice to reuse code when possible, and in 
+many cases there are good free software libraries that are available for 
+incorporation into other software. The use of such libraries is encouraged -- however, 
+staff should not take code from other sources and incorporate it into software under 
+GRL copyright (whether by direct copying, some derivation or translation, or even 
+linking), unless:
 \begin{enumerate}
-\item it is allowed under the terms of a license offered by the copyright holders; and
-\item all requirements of that license are met.
+\item it is allowed under the terms of license offered by the copyright holders; and
+\item all requirements of that license are met. 
 \end{enumerate} 
 
 \par Due to a lack of a principle of fair use that applies world-wide, staff should not 
 rely upon any fair use provisions of copyright law as the basis on which to 
-incorporate the works of others into GRL copyrighted software. 
+incorporate the works of others in whole or in part into GRL copyrighted software. 
 
 \par In addition, staff should not do anything to undermine the copyright position of GRL 
 with respect to code to which they contribute as works made for hire. For example, 
 staff are not permitted to dedicate works made for hire for the Institute into the 
 public domain as that would undermine GRLs copyright interest in that work. 
 Likewise, staff must not incorporate any code for which the copyright status is 
-not clear into GRL copyrighted software. 
+not clear into GRL copyrighted software and should assume that any software 
+that contains neither a copyright notice nor a public domain dedication is copyrighted 
+material that must not be used. 
+
 
 \par Staff should also keep records of the individual authors who have contributed to 
 each source file in order to assist GRL with any legal challenges to the copyright 
@@ -198,9 +205,19 @@ status of the work (see section \ref{section:impnotes.records} for best practice
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Policy exceptions
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Policy exceptions}
 \label{section:exceptions}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General exceptions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{General exceptions to copyright assignment}
 \label{section:exceptions.general}
 Section \ref{section:policy.copyright} requires that staff assign copyright in 
@@ -270,6 +287,9 @@ which a specific exception should be obtained.
 \end{itemize}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Specific exceptions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Specific exceptions to copyright assignment}
 \label{section:exceptions.special}
 
@@ -299,7 +319,7 @@ third-party organisation's records).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
-%% How to implement the policy
+%% Implementation notes
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -342,12 +362,11 @@ documentation that indicates that the range of years should be interpreted as be
 equivalent to a list of years from the first to the last and including each consecutive 
 year in between (see appendix \ref{appendix:range.of.years}). 
 
-% EXISTING SOURCE CODE
+\subsubsection{Modifications to existing code}
 \par Whenever you modify an existing source file in a way which includes copyrightable 
 contributions (e.g. adding more than a few lines of new code or substantially changing 
-existing code), you must ensure that a GRL copyright notice is 
-included in the file and that the year in which your modifications were created is 
-listed in that notice. 
+existing code), you must ensure that a GRL copyright notice is included in the file 
+and that the year in which your modifications were created is listed in that notice. 
 
 \par If an existing source file already contains a GRL copyright notice, this can be 
 accomplished by simply appending the year in which your modifications were created 
@@ -375,7 +394,7 @@ which you received the original source file, and in some cases that may limit
 under which license(s) it is acceptable to distribute a combined work that 
 includes that source code and your own code. In some instances, it is possible 
 you may not be able to combine arbitary third-party code into a combined work 
-without violating the licensing terms of one of them, so please be aware of any 
+without violating the licensing terms of any of them, so please be aware of any 
 license restrictions before you start using any third-party source code or libraries. 
 Note that it is possible to combine material available under multiple different 
 third-party licenses provided they are all compatible \cite{define:compatible} with 
@@ -384,7 +403,7 @@ the license under which you distribute the combined work.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Individual authorship record
+% Individual authorship records
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Individual authorship record}
 \label{section:impnotes.records}
@@ -399,15 +418,15 @@ authorship within each file (in addition to any copyright notices they may add).
 \par The purpose of these records is twofold: 
 \begin{itemize}
 \item to assist with any legal challenges to the copyright status of the code within 
-each file (see section \ref{section:policy.copyright.protection})
+each file (see section \ref{section:policy.protection})
 \item to recognise the set of individuals who contributed to the work, in much the 
 same way an author list on a peer-reviewed paper acknowledges the efforts of the 
 researchers who worked on the paper
 \end{itemize}
 
-\par These records are intended to offer a faithful representation of the set of 
-individuals who contributed to the work in each individual file and should never 
-be modified except to correct errors. 
+\par For both purposes, it is important that these records offer a faithful 
+representation of the set of individuals who contributed to the work in each 
+individual file and should never be modified except to correct actual errors. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -483,9 +502,9 @@ adoption of a different free software compatible license, this must be agreed wi
 IC first and in consultation with the \exectitle\ (\execperson).
 
 
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Failure to comply
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Failure to comply}
 \label{section:policy.copyright.failure}
@@ -502,18 +521,6 @@ organisation when in fact the software is a work made for hire for the Institute
 be considered a form of fraud (in which case anyone harmed by the false 
 statement could potentially sue for damages, and for which one may even be subject 
 to criminal prosecution in some jurisdictions). 
-
-
-%e.g. because you want to retain a copyright with a view 
-%towards commercialisation, you wish to assign copyright to another organisation such 
-%as an open-source software project  collaborator or your home institute, ), 
-%
-%In some cases, contributions to third-party open-source projects require copyright 
-%disclaimers from employers be put on record before any code is accepted. 
-
-%notes on how to assert copyright
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -541,7 +548,9 @@ distribution, and include all clauses found in Appendix B in that documentation
 \end{itemize}
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Translation & commercialisation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Translation \& commercialisation considerations}
 
 \par None of the free software licenses are exclusive licenses, so it 
@@ -566,9 +575,6 @@ opportunities, as well as the potential need for project-level policies
 regarding accepting contributions from third-parties (e.g. they may want to 
 ask any third-party contributors to assign copyright in their contributions to 
 GRL). 
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
