@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[colorlinks]{hyperref}
 \usepackage{verbatim}
-
+\usepackage{listings}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % WTSI Software Policy
@@ -28,14 +28,21 @@ Software Policy
 % fixed-width (typewriter) face for filenames
 \newcommand{\filename}[1]{\texttt{#1}} 
 
-% smaller text size for boilerplate and keep on same page
-\newenvironment{boilerplate}{\bgroup\small\samepage }{\egroup} 
+% minipage for boilerplate text
+\newenvironment{boilerplate}[1][]
+  {\minipage{\linewidth}% \begin{filecode}[#1]
+   \lstset{basicstyle=\ttfamily\footnotesize,breaklines=false,frame=shadowbox,rulesepcolor=\color{blue},#1}}
+   {\endminipage}% \end{filecode}
 
 % paragraph indentation
 \setlength{\parindent}{0pt} % Default is 15pt.
 
 % vertical space between paragraphs (standard 4mm +/- 2mm)
 \setlength{\parskip}{4mm plus2mm minus2mm}
+
+% each section starts a new page
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,24 +51,25 @@ Software Policy
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The policy}
-\label{policy}
+\section{Policy requirements}
+\label{section:policy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Copyright assignment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Copyright assignment}
-\label{policy.copyright}
-\par It is a condition of both employment and of holding visiting worker status at the 
+\subsection{Assign copyright to Genome Research Ltd}
+\label{section:policy.copyright}
+\par It is a condition of employment and of being granted visiting worker status at the 
 Wellcome Trust Sanger Institute (the Institute) that software created in the course 
-of work with the institute is considered work made for hire and must have 
+of work with the Institute is considered work made for hire and must have 
 copyright in the source code assigned to Genome Research Ltd (GRL) unless it 
-falls under a general or specific exception (see \ref{policy.copyright.genexcept} and 
-\ref{policy.copyright.specexcept}). 
+falls under a general or specific exception (see section \ref{section:exceptions}). 
+A copyright notice must be included along with all source code indicating that 
+GRL is a copyright holder (normally this would be included near the top of each 
+source code file in a comment block; see section \ref{section:howto.copyright} for best 
+pratices on how to indicate copyright). 
 
-
-\subsubsection{Scope}
-\label{policy.copyright.scope}
+% Scope
 \par This condition applies whether the employee or visiting worker (staff) 
 created the software while physically located on the Institute's premises or 
 elsewhere, whether using the Institute's equipment or other equipment, and 
@@ -74,15 +82,99 @@ they write to GRL or to obtain a specific exception to retain or assign copyrigh
 otherwise.
 
 
-\subsubsection{Responsibility to protect copyright}
-\label{policy.copyright.protection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Public release in advance of publication
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Release publicly in advance of publication}
+
+\par This policy does not require staff to release software to anyone outside of 
+the Institute, with the exception of software that supports published work and which 
+is authored by GRL employees (e.g. software implementing methods described 
+in a methods paper, software presented in an application note, software used in 
+analysis and/or data processing for a research paper describing the results of 
+those analyses and processing, etc.). Such software must be released 
+publicly using an acceptable license (see section \ref{section:policy.licenses}) 
+by the time of the related publication at the very latest. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acceptable licenses
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Release using an acceptable license}
+\label{section:policy.licenses}
+\par Software under GRL copyright may be distributed outside of 
+the Institute under any free software license as defined by the Free 
+Software Foundation (FSF). A rough definition of free software is that it gives 
+the users ``the freedom to run, copy, distribute, study, change and improve 
+the software,'' but for a more complete definition please refer to the FSF 
+(\url{http://www.gnu.org/philosophy/free-sw.html}). An incomplete list of free 
+software licenses (which are acceptable) as well as nonfree software licenses 
+(which are not acceptable) can be found at: 
+\url{http://www.gnu.org/licenses/license-list.html}. Other licenses may be 
+acceptable as well, provided they meet the requirements listed in the Free 
+Software Foundation's definition. 
+
+\par Prior to distributing a particular piece of software outside the Institute for the 
+first time (including sending privately to an external collaborator or uploading code 
+to public source control repositories such as \url{http://github.com/} 
+or \url{http://sourceforge.net}), the original author(s) should, in conjunction with their 
+line management, choose a free software license and apply it to the source code 
+according to the best practices for that particular license 
+(see section \ref{section:impnotes.recommended} for a set of recommended 
+licenses along with best practices for applying them). They do not have to choose 
+one of the recommended licenses, but if they do not, they must make sure they 
+understand and correctly apply the license of their choice. 
+
+\par Staff must make each subsequent releases of a particular piece of software 
+under the same license as the previous release, unless the terms of the previous 
+release's license would permit the recipients to redistribute modified code under a 
+different license, in which case a subsequent release may be distributed by staff 
+under that license (i.e. it is acceptable to change to a license compatible with 
+the previous license and staff are not more restricted in this regard than those 
+they convey the software to). The reason for this restriction is primarily to prevent 
+staff with limited or no involvement in a software project from releasing that 
+software under terms that might conflict with the intentions of the original 
+authors or undermine potential commercialisation opporuntities for GRL. 
+
+\par Any staff member(s) who wish to re-release software which is under GRL 
+copyright under a new license not compatible with the previous release must 
+apply to the IC for permission to release it under a different license (this would 
+include other acceptable free software licenses as well as alternative licenses 
+that otherwise would not be acceptable, including nonfree licensing 
+agreements). The IC's interest in considering such an application should be 
+to ensure that all relevant stakeholders (including staff involved in the creation 
+of the software) are consulted and will involve the \exectitle\ if necessary to 
+ascertain whether the change of license could effect commercialisation 
+arrangements. 
+
+\par A significant advantage for staff members in releasing code publicly and 
+under free licenses is that it guarantees indefinite access to their work, even 
+if they move to another institute. There have been notable examples in 
+academia where individuals have been unable to continue working on software 
+that they wrote because of licensing restrictions, and this policy avoids that 
+outcome by allowing all software to be made publicly available under a free 
+software license. 
+
+
+
+\subsection{Respect copyright and protect GRL copyright}
+\label{section:policy.protection}
 
 \par Staff must respect the copyright interests of others, in particular when producing 
-software which will fall under GRL copyright. 
+software which falls under GRL copyright. 
+%Were GRL copyrighted code to be found 
+%to be infringing on the copyright of others, reputational damage to the Institute could 
+%occur, and the copyright status of our other software may be called into question. 
 
-\par Staff should take care not to infringe the copyright of others by taking their code 
-and incorporating it into software under GRL copyright (whether by direct copying 
-or some derivation or translation), unless:
+\par %In general, it is good software practice to reuse code, and in many cases there 
+%are good free software libraries that are available foir incorporation into other 
+%software. 
+However, staff should take care not to to take code from other sources 
+and incorporate it into software under GRL copyright (whether by direct copying, 
+some derivation or translation, or even linking), unless:
 \begin{enumerate}
 \item it is allowed under the terms of a license offered by the copyright holders; and
 \item all requirements of that license are met.
@@ -101,11 +193,21 @@ not clear into GRL copyrighted software.
 
 \par Staff should also keep records of the individual authors who have contributed to 
 each source file in order to assist GRL with any legal challenges to the copyright 
-status of the work (see \ref{bestpractice.records} for best practices in this regard). 
+status of the work (see section \ref{section:impnotes.records} for best practices in this regard). 
 
 
-\subsubsection{General exceptions}
-\label{policy.copyright.genexcept}
+
+
+\section{Policy exceptions}
+\label{section:exceptions}
+
+\subsection{General exceptions to copyright assignment}
+\label{section:exceptions.general}
+Section \ref{section:policy.copyright} requires that staff assign copyright in 
+software they create to GRL. This section describes general exceptions to 
+that requirement which do not require any special permission outside of this 
+policy itself. 
+
 \begin{itemize}
 
 \item Software completely unrelated to work with the Institute
@@ -117,8 +219,23 @@ subject to this policy. Whether or not a particular software project would or
 would not be considered a work made for hire is a complex legal question and 
 is outside the scope of this policy. Staff who are uncertain whether software 
 they are developing or have developed is a work made for hire should seek 
-legal advice or obtain a specific exception (see \ref{policy.copyright.specexcept}) 
+legal advice or obtain a specific exception (see section \ref{section:exceptions.special}) 
 for the avoidance of any doubt. 
+
+\item Uncopyrightable code
+
+\par This policy does not apply to code which does not rise to the level of a 
+creative work or which would not be copyrightable for some other reason 
+(such as having previously been dedicated into the public domain by the author). 
+
+\par One example might be contributing extremely minor modifications to an existing 
+codebase such as correcting minor spelling or syntax issues or adjusting whitespace. 
+It could also include making the same extremely minor change repeatedly across a 
+large number of lines and/or files, such as running a simple find-and-replace 
+algorithm across an entire codebase to correct a typographical or spelling error. 
+Generally, it is the degree of creativity involved and not the amount of code changed 
+that determines whether a particular set of modifications is copyrightable. 
+
 
 \item Small bug fixes and enhancements to third-party software
 
@@ -127,7 +244,7 @@ developed by third parties. It is often desirable that those changes be contribu
 back to the third party maintainer so that others can benefit from the modifications. 
 In many cases, this can be done within the contraints of this policy by simply 
 assigning copyright in the modified code to GRL and providing the modified code 
-under one of the acceptable licenses \ref{policy.licenses}. 
+under one of the acceptable licenses \ref{section:policy.licenses}. 
 
 \par However, in some cases the third-party may not be willing to accept contributions 
 without assigning copyright to them (this is likely to be the policy in the case of 
@@ -150,25 +267,11 @@ exception to contribute up to 100 lines of code (or one working day of
 development effort) to each individual third-party software package, beyond 
 which a specific exception should be obtained. 
 
-\item Uncopyrightable code
-
-\par This policy does not apply to code which does not rise to the level of a 
-creative work or which would not be copyrightable for some other reason 
-(such as having previously been dedicated into the public domain by the author). 
-
-\par One example might be contributing extremely minor modifications to an existing 
-codebase such as correcting minor spelling or syntax issues or adjusting whitespace. 
-It could also include making the same extremely minor change repeatedly across a 
-large number of lines and/or files, such as running a simple find-and-replace 
-algorithm across an entire codebase to correct a typographical or spelling error. 
-Generally, it is the degree of creativity involved and not the amount of code changed 
-that determines whether a particular set of modifications is copyrightable. 
-
 \end{itemize}
 
 
-\subsubsection{Specific exceptions}
-\label{policy.copyright.specexcept}
+\subsection{Specific exceptions to copyright assignment}
+\label{section:exceptions.special}
 
 \par If a staff member wishes to develop software in the general area of his/her work 
 but does not want to assign copyright to GRL, it should be discussed in the first 
@@ -177,93 +280,16 @@ member can then bring the request for a specific exception to the IC for a decis
 
 \par Any staff member wishing to obtain a specific exception to the requirement to 
 assign copyright to GRL must receive written permission from the IC before 
-distributing any software outside the requirements of this policy. 
+distributing any software outside the requirements of this policy. The IC will consult 
+with the \exectitle\ in these matters as appropriate. 
 
 \par The written permission should indicate the specific work(s) and staff member(s) 
-to which it applies as well as the organisation(s) or individual(s) to whom it is 
-acceptable to assign copyright in that work in lieu of assigning it to GRL. An 
-email from the IC secretary would suffice as written permission for the 
-purposes of this policy, although it is also possible to get a signed letter from 
-the \exectitle\ if that is required (e.g. for a third-party organisation's records). 
-
-
-\subsubsection{Failure to comply}
-\label{policy.copyright.failure}
-\par Failing to comply with this policy may put the Institute's legal position with respect 
-to its intellectual property at risk and may undermine our ability to protect the 
-large investment we have made in software development, including the protection 
-of works made available under free software licenses. 
-
-\par In addition, distribution of software in a manner not consistent with this policy could be 
-considered an infringement of GRL's copyright interest in the work (for which the 
-Institute could seek damages). Worse, distribution of software including a copyright 
-notice claiming a personal copyright or assigning copyright to another 
-organisation when in fact the software is a work made for hire for the Institute may 
-be considered a form of fraud (in which case anyone harmed by the false 
-statement could potentially sue for damages, and for which one may even be subject 
-to criminal prosecution in some jurisdictions). 
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Public release in advance of publication
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Public release in advance of publication}
-
-\par Software which supports published work that is authored by GRL employees (e.g. 
-software implementing methods described in a methods paper, software presented 
-in an application note, software used in analysis and/or data processing for a 
-research paper describing the results of those analyses and processing, etc.) should 
-be made publicly available using an acceptable license (see \ref{policy.licenses} 
-by the time of publication at the very latest. 
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Acceptable licenses
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Acceptable licenses}
-\label{policy.licenses}
-\par Our policy is that software under GRL copyright may be distributed outside of 
-the Institute (including being made publicly available) under any free software 
-license as defined by the Free Software Foundation (FSF). A rough definition of 
-free software is that it gives the users 
-``the freedom to run, copy, distribute, study, change and improve the software'' 
-but for a more complete definition, please refer to the FSF 
-(\url{http://www.gnu.org/philosophy/free-sw.html}). 
-An incomplete list of free software licenses (which are acceptable) as well as 
-nonfree software licenses (which are not acceptable) can be found at: 
-\url{http://www.gnu.org/licenses/license-list.html}. Other licenses may be 
-acceptable as well, provided they meet the requirements listed in the Free 
-Software Foundation's definition. 
-
-\par Prior to distributing a particular piece of software outside the Institute for the 
-first time (including uploading code to public source control repositories such 
-as \url{http://github.com/} or \url{http://sourceforge.net}), the original author(s) 
-should, in conjunction with their line management, choose a free software 
-license and apply it to the source code according to the best practices 
-recommended for that particular license (see Appendix \ref{licenses} for a set 
-of recommended licenses along with best practices for applying them). In 
-general, if you 
-
-\par Subsequent of a particular piece of software, staff must make all subsequent 
-releases under the same license, unless that license would permit the public to 
-redistribute the code under a different license (i.e. it is acceptable to change to a license 
-compatible with the original license). Any staff member who wishes to do otherwise 
-should apply to the IC for permission to release a piece of existing software under 
-GRL copyright under a different license. Note that if software includes multiple 
-copyright holders (e.g. GRL and another organisation), the license can only be changed 
-to an incompatible license by unanimous agreement of all copyright holders. 
-
-\par A significant advantage for staff members in releasing code under free licenses 
-is that it guarantees indefinite access to their work, even if they move to another institute. 
-There have been notable examples in academia where individuals have been unable 
-to continue working on software that they wrote because of licensing restrictions, and 
-this policy avoids that outcome by allowing all software to be made publicly available 
-under a free software license. 
-
+to which it applies as well as either a blanket copyright disclaimer or a specific list of 
+the organisation(s) or individual(s) to whom it is acceptable to assign copyright in 
+lieu of assigning it to GRL. Permission in the form of an email from the IC secretary 
+would suffice as written permission for the purposes of this policy, although it is also 
+possible to request a signed letter from the \exectitle\ if that is required (e.g. for a 
+third-party organisation's records). 
 
 
 
@@ -277,23 +303,14 @@ under a free software license.
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Implementation best practices}
-
-%e.g. because you want to retain a copyright with a view 
-%towards commercialisation, you wish to assign copyright to another organisation such 
-%as an open-source software project  collaborator or your home institute, ), 
-%
-%In some cases, contributions to third-party open-source projects require copyright 
-%disclaimers from employers be put on record before any code is accepted. 
-
-%notes on how to assert copyright
-
-
+\section{Implementation notes}
+\label{section:impnotes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % How to indicate copyright
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{How to indicate copyright}
+\label{section:howto.copyright}
 \par To assign copyright in software source code to GRL, a copyright notice should 
 be included within its source code (normally within a comment block in the first 
 few lines of each file). If a piece of software is comprised of multiple source code 
@@ -317,21 +334,27 @@ Copyright (C) <YEARS> Genome Research Ltd.
 \end{verbatim}
 
 \par Where `\texttt{<YEARS>}' should include the list of years in which copyrightable 
-contributions \cite{define:copyrightable} were made to the software. Each individual 
-year should be listed separately. 
+contributions \cite{define:copyrightable} were made to the software. Each such year 
+should be listed individually and separated by commas. A range of years (separated 
+by dashes) should ideally not be used as it tends to lead to confusion and mistakes. 
+If a range of years is used in any source file, a notice must be included in the 
+documentation that indicates that the range of years should be interpreted as being 
+equivalent to a list of years from the first to the last and including each consecutive 
+year in between (see appendix \ref{appendix:range.of.years}). 
 
+% EXISTING SOURCE CODE
 \par Whenever you modify an existing source file in a way which includes copyrightable 
 contributions (e.g. adding more than a few lines of new code or substantially changing 
-existing code), you must ensure that a Genome Research Ltd copyright notice is 
+existing code), you must ensure that a GRL copyright notice is 
 included in the file and that the year in which your modifications were created is 
 listed in that notice. 
 
-\par If an existing source file already contains a Genome Research Ltd copyright notice, this can be 
+\par If an existing source file already contains a GRL copyright notice, this can be 
 accomplished by simply appending the year in which your modifications were created 
 to the end of the list of years in the existing copyright notice. If that year is already 
 listed, you do not need to make any changes to the notice. 
 
-\par If an existing source file does not contains any Genome Research Ltd copyright 
+\par If an existing source file does not contains any GRL copyright 
 notice, you should add a new line following any existing copyright notices and 
 including the year in which the modifications were created. If the existing source 
 file contains no copyright notice, unless you are absolutely certain what the 
@@ -347,7 +370,7 @@ add a comment to the file indicating that portions of it are based on that earli
 work which was placed into the public domain (give the name of the author and 
 include a copy of their written public domain dedication). 
 
-\par Please note that it is important to comply with the terms of license under 
+\par Note that it is important to comply with the terms of license under 
 which you received the original source file, and in some cases that may limit 
 under which license(s) it is acceptable to distribute a combined work that 
 includes that source code and your own code. In some instances, it is possible 
@@ -364,34 +387,37 @@ the license under which you distribute the combined work.
 % Individual authorship record
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Individual authorship record}
-\label{bestpractice.records}
+\label{section:impnotes.records}
 \par Each staff member who makes copyrightable contributions to a source file 
 should include their own name in the file, usually on an ``Author'' line in the 
 same comment block as the copyright notice and license text). In addition, it is 
 good practice to use a source control system (such as git or svn) that allows 
-individual line-level contributions to be attributed to specific individuals. 
+individual line-level contributions to be attributed to specific individuals. If 
+contributions are accepted from third-parties, they should also indicate their 
+authorship within each file (in addition to any copyright notices they may add).
 
 \par The purpose of these records is twofold: 
 \begin{itemize}
 \item to assist with any legal challenges to the copyright status of the code within 
-each file (see \ref{policy.copyright.protection})
+each file (see section \ref{section:policy.copyright.protection})
 \item to recognise the set of individuals who contributed to the work, in much the 
 same way an author list on a peer-reviewed paper acknowledges the efforts of the 
 researchers who worked on the paper
 \end{itemize}
 
-\par These records should never be modified except to correct 
-errors, with the intention that they offer a faithful representation of the set of 
-individuals who contributed to the work. 
-
-
-\section{THIS IS THE END}
+\par These records are intended to offer a faithful representation of the set of 
+individuals who contributed to the work in each individual file and should never 
+be modified except to correct errors. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Choice of license
+% Recommended licenses
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Choosing between acceptable licenses}
+\subsection{Recommended licenses}
+\label{section:impnotes.recommended}
+
+Different free software licenses impose different restrictions on how recipients 
+of the software can use, modify, and redistribute the code. 
 
 All acceptable licenses considered here require the user of the code (referred to 
 subsequently as the licensee) to maintain attribution and disclaimers in any versions of 
@@ -448,7 +474,7 @@ version of your software is only run on a server but not distributed to others).
 The standard boilerplate header for each of these licenses is given in Appendix A, 
 which in the case of LGPL, GPL and AGPL includes a link to the primary web site 
 documenting the full license. Any of these licenses is acceptable as satisfying 
-requirements above, so long as the copyright is assigned to Genome Research Limited 
+requirements above, so long as the copyright is assigned to GRL 
 and the author(s) names are given.
 
 Given the legal nature of these boilerplate headers they must not be edited. If there is an 
@@ -457,10 +483,43 @@ adoption of a different free software compatible license, this must be agreed wi
 IC first and in consultation with the \exectitle\ (\execperson).
 
 
+
+
+
+
+\subsection{Failure to comply}
+\label{section:policy.copyright.failure}
+\par Failing to comply with this policy may put the Institute's legal position with respect 
+to its intellectual property at risk and may undermine our ability to protect the 
+substantial investment we have made in software development, including the protection 
+of works made available under free software licenses. 
+
+\par In addition, distribution of software in a manner not consistent with this policy could be 
+considered an infringement of GRL's copyright interest in the work (for which the 
+Institute could seek damages). Worse, distribution of software including a copyright 
+notice claiming a personal copyright or assigning copyright to another 
+organisation when in fact the software is a work made for hire for the Institute may 
+be considered a form of fraud (in which case anyone harmed by the false 
+statement could potentially sue for damages, and for which one may even be subject 
+to criminal prosecution in some jurisdictions). 
+
+
+%e.g. because you want to retain a copyright with a view 
+%towards commercialisation, you wish to assign copyright to another organisation such 
+%as an open-source software project  collaborator or your home institute, ), 
+%
+%In some cases, contributions to third-party open-source projects require copyright 
+%disclaimers from employers be put on record before any code is accepted. 
+
+%notes on how to assert copyright
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Application of license
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Applying the license}
+\subsection{Applying a license}
 
 Once you have chosen the license you wish to use, you must apply the license so that 
 people can see it. For software that is made available outside the Institute, at a 
@@ -482,22 +541,69 @@ distribution, and include all clauses found in Appendix B in that documentation
 \end{itemize}
 
 
+
+\subsection{Translation \& commercialisation considerations}
+
+\par None of the free software licenses are exclusive licenses, so it 
+is possible for copyright holder(s) to license software under 
+a nonfree commercial license that is also available publicly under a free 
+software license, although in that case the more restrictive ``copyleft'' 
+licenses (such as the GPL or AGPL) may offer a better business
+proposition for a ``paid license'' form of commercialisation than would 
+a more permissive license (such as mBSD or Apache). On the other hand, 
+the more permissive licenses may tend to result in more widespread use, 
+especially within commercial organisations, and that could result in a 
+larger potential customer base for a ``paid support'' style of commercialisation. 
+
+\par If software includes code with copyright from multiple parties 
+(e.g. if GRL copyright applies only to some portions of the software but other 
+organisations and/or individuals also hold a copyright in some portions), the 
+license can only be changed to an incompatible license by agreement of all 
+copyright holders. Staff interested in potential commercialisation of GRL 
+software after an initial public release should think carefully about what 
+license to choose in order to best facilitate potential commercialisation 
+opportunities, as well as the potential need for project-level policies 
+regarding accepting contributions from third-parties (e.g. they may want to 
+ask any third-party contributors to assign copyright in their contributions to 
+GRL). 
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Old code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Old code not conforming to these conditions}
+\subsection{Code not conforming to these conditions}
 
-Any code written by GRL employees or Sanger visiting/hosted scientists that is 
-distributed on our web or ftp site should contain an approved header statement as 
-outlined above. If there is no such copyright and licensing statement now, or what 
-there is does not comply, then this policy should be applied and the code amended as 
-appropriate. 
+\par Any code written entirely by staff that is distributed publicly (e.g. on the 
+Institute's web or ftp sites, on Institute-affliated GitHub repositories, etc) 
+should contain copyright notices and an acceptable free software license. 
+
+\par If existing software is being distributed from which copyright notices 
+and/or licensing statements have been omitted from some or all source 
+code files, then this policy should be applied and the notices and license 
+text added as appropriate. Importantly, the year(s) included in a copyright 
+notice should reflect the actual year(s) in which copyrightable code was 
+created -- it is not acceptable to simply add the current year to a file unless 
+you make a new creative contribution to it. Use any available information 
+(e.g. source control records, release notes, etc) to ascertain the original 
+year(s) during which substantive contributions were made to each file as
+well as the authors involved (contact them if possible). It is generally better 
+to err on the side of including an earlier copyright year rather than a later 
+year if there is any doubt as to the actual year(s) involved (i.e. if you know 
+the original date the file was created but are not sure when it was modified, 
+include at least that original year of creation). 
+
+If the existing release does not include any license whatsoever, the IC should 
+be informed and should decide an appropriate license to apply to the 
+software. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % External projects
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Collaborations with others, and contributions to open source projects}
+\subsection{OLD*******Collaborations with others, and contributions to open source projects}
 
 The following considerations apply when GRL employees or Sanger visiting/hosted 
 scientists make substantial contributions to code maintained in collaboration with 
@@ -533,290 +639,97 @@ authorised by an IC member.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Signing-off 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Contributions to open source projects that require ``signing off''}
+\subsection{OLD*******Contributions to open source projects that require ``signing off''}
 
 Some open source projects require code to be ``signed-off'' with a declaration that says ``I 
 wrote this code and am authorized to contribute it to the project'' (see section 5 in 
-\url{http://linux.yyz.us/patch-format.html} for an example). The \exectitle\ (\execperson) can authorise code to be contributed in this fashion. 
+\url{http://linux.yyz.us/patch-format.html} for an example). The \exectitle\ can authorise 
+code to be contributed in this fashion. 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Policy scope
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Scope}
-
-This policy applies to code you develop at work or at home when engaged in your 
-work, whether on Sanger's or your own computer. If you wish to develop software in 
-the general area of your work for which you wish to retain copyright with a view to 
-commercialisation, you should discuss this beforehand with the Director of Corporate 
-Services, or your IC member who would be expected to raise it with the Director of 
-Corporate Services.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Commercialisation
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Commercialisation of GRL software}
-
-There are precedents where GRL software has been distributed under a commercial 
-license, i.e. where payment has been received for use of the software. It is possible to 
-distribute commercially software that is also available under an open source license, for 
-example when someone wants to modify it and sell the modified version in a way 
-incompatible with the open source license. If any GRL employee or Sanger 
-visiting/hosted scientist wishes to pursue such a possibility, they should approach the 
-Director of Corporate Services, keeping the IC informed. 
 
 
 \appendix
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Appendix A: source code boilerplate
+% Appendix A: Boilerplate for recommended licenses
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Boilerplate headers for source code files}
+\section{Boilerplate}
+\label{appendix:boilerplate}
 
-The following are boilerplate headers that should be used, substituting DATES, PROGRAM-NAME, PROGRAM-AUTHOR and EMAIL as appropriate.
+The following are boilerplate headers that should be used, substituting 
+DATES, PROGRAM-NAME, PROGRAM-AUTHOR and EMAIL as appropriate.
 
-Note 1: The DATES in the copyright notice should be a comma-delimited list of years in which 
-copyrightable contributions were made to the software. If and only if every year within a range 
-of years really is a copyrightable year, you may choose to shorten such a range by using a `-' 
-character between the first and last copyrightable years in the range. Multiple such ranges may 
-be specified as elements of the comma-separated list, but it is also acceptable to list out each 
-year individually. This line in the license should be updated every time a copyrightable 
-contribution is made to the software. For example, if software was first written in 2005, then 
-`2005' would be an appropriate value for DATES. If no substantial contributions were made 
-during 2006, but new code was written in 2007, then DATES could be `2005, 2007' but should 
-not be `2005-2007' since no copyrightable contributions were made in 2006. If a license file 
-specified DATES as `2005, 2007-2009, 2011-2012' then the contributor would be equivalent to 
-specifying DATES as `2005, 2007, 2008, 2009, 2011, 2012' and it indicates that no copyrightable 
-contributions were made in 2006 or 2010. It is important not to assert copyright for years in 
-which no copyrightable contributions were made since this could undermine our rights to 
-enforce the copyright. 
- 
-Note 2: Including the email address (EMAIL) is optional. 
+Note: Including the email address (EMAIL) is optional. 
 
 \subsection{GPL license (for software consisting of multiple source files)}
 
 \begin{boilerplate}
-\begin{verbatim}
-Copyright (c) DATES Genome Research Ltd. 
- 
-Author: PROGRAM-AUTHOR <EMAIL> 
-
-This file is part of PROGRAM-NAME. 
-
-PROGRAM-NAME is free software: you can redistribute it and/or modify it under 
-the terms of the GNU General Public License as published by the Free Software 
-Foundation; either version 3 of the License, or (at your option) any later 
-version. 
- 
-This program is distributed in the hope that it will be useful, but WITHOUT 
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more 
-details. 
- 
-You should have received a copy of the GNU General Public License along with 
-this program. If not, see <http://www.gnu.org/licenses/>. 
-\end{verbatim}
+\lstinputlisting{boilerplate/gpl-multi.txt}
 \end{boilerplate}
 
 \subsection{GPL license (for software consisting of only one source file)}
 \begin{boilerplate}
-\begin{verbatim}
-Copyright (c) DATES Genome Research Ltd. 
-
-Author: PROGRAM-AUTHOR <EMAIL> 
-
-This program is free software: you can redistribute it and/or modify it under 
-the terms of the GNU General Public License as published by the Free Software 
-Foundation; either version 3 of the License, or (at your option) any later 
-version. 
-
-This program is distributed in the hope that it will be useful, but WITHOUT 
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more 
-details. 
-
-You should have received a copy of the GNU General Public License along with 
-this program. If not, see <http://www.gnu.org/licenses/>. 
-\end{verbatim}
+\lstinputlisting{boilerplate/gpl-single.txt}
 \end{boilerplate}
 
 \subsection{LGPL license (for software consisting of multiple source files)}
 \begin{boilerplate}
-\begin{verbatim}
-Copyright (c) DATES Genome Research Ltd. 
-
-Author: PROGRAM-AUTHOR <EMAIL> 
-
-This file is part of PROGRAM-NAME. 
-
-PROGRAM-NAME is free software: you can redistribute it and/or modify it under 
-the terms of the GNU Lesser General Public License as published by the Free 
-Software Foundation; either version 3 of the License, or (at your option) any 
-later version. 
- 
-This program is distributed in the hope that it will be useful, but WITHOUT 
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more 
-details. 
- 
-You should have received a copy of the GNU Lesser General Public License along 
-with this program. If not, see <http://www.gnu.org/licenses/>. 
-\end{verbatim}
+\lstinputlisting{boilerplate/lgpl-multi.txt}
 \end{boilerplate}
 
 \subsection{LGPL license (for software consisting of only one source file)}
 \begin{boilerplate}
-\begin{verbatim}
-Copyright (c) DATES Genome Research Ltd. 
-
-Author: PROGRAM-AUTHOR <EMAIL> 
-
-This program is free software: you can redistribute it and/or modify it under 
-the terms of the GNU Lesser General Public License as published by the Free 
-Software Foundation; either version 3 of the License, or (at your option) any 
-later version. 
-
-This program is distributed in the hope that it will be useful, but WITHOUT 
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more 
-details. 
-
-You should have received a copy of the GNU Lesser General Public License 
-along with this program. If not, see <http://www.gnu.org/licenses/>. 
-\end{verbatim}
+\lstinputlisting{boilerplate/lgpl-single.txt}
 \end{boilerplate}
 
 \subsection{AGPL license (for software consisting of multiple source files)}
 \begin{boilerplate}
-\begin{verbatim}
-Copyright (c) DATES Genome Research Ltd. 
-
-Author: PROGRAM-AUTHOR <EMAIL> 
-
-This file is part of PROGRAM-NAME. 
-
-PROGRAM-NAME is free software: you can redistribute it and/or modify it under 
-the terms of the GNU Affero General Public License as published by the Free 
-Software Foundation; either version 3 of the License, or (at your option) any 
-later version. 
-
-This program is distributed in the hope that it will be useful, but WITHOUT 
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more 
-details. 
-
-You should have received a copy of the GNU Affero General Public License 
-along with this program. If not, see <http://www.gnu.org/licenses/>.
-\end{verbatim}
+\lstinputlisting{boilerplate/agpl-multi.txt}
 \end{boilerplate}
 
 \subsection{AGPL license (for software consisting of only one source file)}
 \begin{boilerplate}
-\begin{verbatim}
-Copyright (c) DATES Genome Research Ltd. 
-
-Author: PROGRAM-AUTHOR <EMAIL> 
-
-This program is free software: you can redistribute it and/or modify it under 
-the terms of the GNU Affero General Public License as published by the Free 
-Software Foundation; either version 3 of the License, or (at your option) any 
-later version. 
-
-This program is distributed in the hope that it will be useful, but WITHOUT 
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more 
-details. 
-
-You should have received a copy of the GNU Affero General Public License 
-along with this program. If not, see <http://www.gnu.org/licenses/>. 
-\end{verbatim}
+\lstinputlisting{boilerplate/agpl-single.txt}
 \end{boilerplate}
 
 \subsection{Modified-BSD license}
 \begin{boilerplate}
-\begin{verbatim}
-Copyright (c) DATES Genome Research Ltd. 
-
-Author: PROGRAM-AUTHOR <EMAIL> 
-
-Redistribution and use in source and binary forms, with or without 
-modification, are permitted provided that the following conditions are met: 
-
-   1. Redistributions of source code must retain the above copyright notice,
-this list of conditions and the following disclaimer.
-   2. Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-   3. Neither the names Genome Research Ltd and Wellcome Trust Sanger Institute
-nor the names of its contributors may be used to endorse or promote products
-derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY GENOME RESEARCH LTD AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
-DISCLAIMED. IN NO EVENT SHALL GENOME RESEARCH LTD OR CONTRIBUTORS BE LIABLE 
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-\end{verbatim}
+\lstinputlisting{boilerplate/mbsd.txt}
 \end{boilerplate}
 
-\subsection{GPL example}
-
-\begin{boilerplate}
-\begin{verbatim}
-Copyright (c) 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 
-2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 Genome Research Ltd. 
- 
-Author: A.N. Other <a.n.other@sanger.ac.uk> 
- 
-This file is part of uber_wtsi_program. 
- 
-uber_wtsi_program is free software: you can redistribute it and/or modify it 
-under the terms of the GNU General Public License as published by the Free 
-Software Foundation; either version 3 of the License, or (at your option) any 
-later version.  
-
-This program is distributed in the hope that it will be useful, but WITHOUT 
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more 
-details. 
- 
-You should have received a copy of the GNU General Public License along with 
-this program. If not, see <http://www.gnu.org/licenses/>. 
-\end{verbatim}
-\end{boilerplate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix B: documentation boilerplate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Boilerplate to include in documention}
-
+\section{Note regarding range of years to include in documention as needed}
+\label{appendix:range.of.years}
 The following boilerplate should be included somewhere in the 
-documentation distributed with the software. It need not be at the start of a 
-file (which would be a good place to reiterate the name of the software, to 
-describe what it does, and to describe where to find additional documentation 
-on installation and use of the software), but must be included somewhere in 
-the documentation. 
+documentation distributed with the software if any files contain copyright 
+notices that use a ``range of years'' syntax in place of a comma-delimited 
+list of years. This note need not be at the start of the a documentation file, 
+but must be included somewhere in the documentation. 
 
 \begin{boilerplate}
-\begin{verbatim}
-The usage of a range of years within a copyright statement contained within 
-this distribution should be interpreted as being equivalent to a list of years 
-including the first and last year specified and all consecutive years between 
-them. For example, a copyright statement that reads "Copyright (c) 2005, 2007-
-2009, 2011-2012" should be interpreted as being identical to a statement that 
-reads "Copyright (c) 2005, 2007, 2008, 2009, 2011, 2012" and a copyright 
-statement that reads "Copyright (c) 2005-2012" should be interpreted as being 
-identical to a statement that reads "Copyright (c) 2005, 2006, 2007, 2008, 
-2009, 2010, 2011, 2012".
-\end{verbatim}
+\lstinputlisting{docnotes/range-of-years.txt}
 \end{boilerplate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix C: Examples
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Examples}
+
+\subsection{GPL example with a single author}
+\begin{boilerplate}
+\lstinputlisting{examples/gpl-single-author.txt}
+\end{boilerplate}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -850,6 +763,11 @@ amendments: AGPL licenses added, Appendix 3. (boilerplate instructions) \\
 v6 (18 July 2014)		& Joshua Randall	& \parbox{6cm}{
 amendments: updated Director of Corporate Services. \\
 formatting: converted to LaTeX, consolidated version/author history. \\
+} \\
+\hline
+v7 (proposed draft)		& Joshua Randall	& \parbox{6cm}{
+major substantive changes: simplification of policy to be less prescriptive\\
+restructured into core policy requirements along with implementation notes. 
 } \\
 \hline
 \end{tabular}
