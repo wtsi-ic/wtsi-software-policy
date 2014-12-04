@@ -267,11 +267,12 @@ under one of the acceptable licenses \ref{section:policy.licenses}.
 without assigning copyright to them (this is likely to be the policy in the case of 
 corporate-owned software but is also common practice for many open source 
 foundations, including the FSF). To make it easy for staff to contribute small 
-changes back to the community from which we receive software, a general 
-exception to the requirement to assign copyright to GRL is hereby granted for 
-small contributions made for the purpose of fixing bugs, improving performance, 
-or contributing minor enhancements to a third-party software package for which 
-the maintainer would otherwise not accept the modified code contribution. 
+(but copyrightable) changes back to the community from which we receive 
+software, a general exception to the requirement to assign copyright to GRL is 
+hereby granted for small contributions made for the purpose of fixing bugs, 
+improving performance, or contributing minor enhancements to a third-party 
+software package for which the maintainer would otherwise not accept the 
+modified code contribution. 
 
 \par In general, ``small'' contributions should consist of a set of relatively minor 
 contributions that togehter should not consitute more than 100 lines of code 
@@ -294,7 +295,7 @@ which a specific exception should be obtained.
 \label{section:exceptions.special}
 
 \par If a staff member wishes to develop software in the general area of his/her work 
-but does not want to assign copyright to GRL, it should be discussed in the first 
+but does not want to assign copyright to GRL, this should be discussed in the first 
 instance with an IC member -- ideally before beginning work on the project. The IC 
 member can then bring the request for a specific exception to the IC for a decision. 
 
@@ -435,12 +436,43 @@ individual file and should never be modified except to correct actual errors.
 \subsection{Recommended licenses}
 \label{section:impnotes.recommended}
 
-Different free software licenses impose different restrictions on how recipients 
+\par Different free software licenses impose different restrictions on how recipients 
 of the software can use, modify, and redistribute the code. 
 
-All acceptable licenses considered here require the user of the code (referred to 
-subsequently as the licensee) to maintain attribution and disclaimers in any versions of 
-the code which they redistribute. The choice between alternative licenses depends on 
+\par Most (but not all) free software licenses require the user of the code (the licensee) 
+to maintain copyright, attribution, and disclaimer statements in any versions of the 
+source code and binaries which they redistribute. 
+
+\subsubsection{Permissive licenses}
+\par Some licenses (permissive licenses) don't include any additional restrictions on 
+the licensee. That means that a piece of software licensed under a permissive 
+license allowed the licensee can take the code, combine it with their own software, 
+modify it to include additional functionality, and sell it to others under a nonfree 
+license without sharing the source code of the software (or their changes) with anyone. 
+These licenses are a good choice when there is little or no potential for paid-license 
+commercialisation (because being available under a permissive license undermines 
+the business case for a paid license), or when the benefits of being permissive outweigh 
+the benefits from any potential commercialisation. Because the license terms are 
+more permissive, software under permissive licenses might tend to get more use 
+(especially without companies) than software under more restrictive free licenses, 
+so it might be a good choice if the most important factor is to have the software used 
+as widely as possible (for example, software which serves as the reference 
+implementation for a data format standard). 
+
+\par Permissive licenses that are recommended for use include: 
+\begin{itemize}
+\item 3-clause modified BSD (mBSD) license 
+\item X11 license
+\item MIT license
+\item Apache 2.0 license
+\end{itemize}
+
+\subsubsection{Copyleft licenses}
+\par Other licenses (copyleft licenses) place additional restrictions on what the 
+licensee is allowed to do, generally in the interest of ensuring that the code and 
+any modifications to the code, continues to stay free. 
+
+The choice between alternative licenses depends on 
 what additional obligations you wish to place on the licensee. There are three additional obligations to consider: 
 
 \begin{enumerate}
