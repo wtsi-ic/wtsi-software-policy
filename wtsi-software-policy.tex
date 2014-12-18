@@ -200,8 +200,9 @@ material that must not be used.
 
 \par Staff should also keep records of the individual authors who have contributed to 
 each source file in order to assist GRL with any legal challenges to the copyright 
-status of the work (see section \ref{section:impnotes.records} for best practices in this regard). 
-
+status of the work. If the software is distributed, the authorship records should be 
+distributed along with it (see section \ref{section:impnotes.records} for best practices 
+in this regard). 
 
 
 
@@ -343,11 +344,11 @@ no copyrightable contributions were made to that file (because that could risk t
 copyright status of the whole file). The only exception to this is when starting a 
 new file, it is acceptable to begin it with a copyright notice for the current year, in 
 anticipation of the initial version of the file being created. This makes it easier to 
-work with template headers that you can copy into place to start a new source 
-file. If it later turns out that you don't make any copyrightable contributions until 
-a later year, you should change the copyright notice to reflect the year(s) in which 
+work with template headers that can be copied into place to start a new source 
+file. If it later turns out that copyrightable contributions are not made until 
+a later year, simply change the copyright notice to reflect the year(s) in which 
 copyrightable contributions were actually made (i.e. replace the year from the 
-template with the actual year when you created the initial file contents). 
+template with the actual year when the file contents are added). 
 
 \par The copyright notice should be of the form: 
 \begin{verbatim}
@@ -364,42 +365,42 @@ equivalent to a list of years from the first to the last and including each cons
 year in between (see appendix \ref{appendix:range.of.years}). 
 
 \subsubsection{Modifications to existing code}
-\par Whenever you modify an existing source file in a way which includes copyrightable 
+\par Whenever existing source files are modified in a way which includes copyrightable 
 contributions (e.g. adding more than a few lines of new code or substantially changing 
-existing code), you must ensure that a GRL copyright notice is included in the file 
-and that the year in which your modifications were created is listed in that notice. 
+existing code), staff must ensure that a GRL copyright notice is included in the file 
+and that the year in which those modifications were created is listed in that notice. 
 
 \par If an existing source file already contains a GRL copyright notice, this can be 
 accomplished by simply appending the year in which your modifications were created 
 to the end of the list of years in the existing copyright notice. If that year is already 
-listed, you do not need to make any changes to the notice. 
+listed, it is not necessary to make any changes to the notice (but you should update 
+authorship records). 
 
-\par If an existing source file does not contains any GRL copyright 
-notice, you should add a new line following any existing copyright notices and 
-including the year in which the modifications were created. If the existing source 
-file contains no copyright notice, unless you are absolutely certain what the 
-copyright status is of the work, you should assume it is actually copyrighted by 
-someone unknown to you and therefore should not use it as to do so would risk 
-infringing that unknown copyright when you distribute the combined work. One 
-scenario in which no copyright notice would be present is if the work has been 
-dedicated to the public domain by the author. In that instance, please ensure 
-that a public domain dedication is present in the file. If you know 
-that the file is in the public domain but it does not say so in the file (i.e. because 
-you asked the author and received confirmation via personal communication), 
-add a comment to the file indicating that portions of it are based on that earlier 
-work which was placed into the public domain (give the name of the author and 
-include a copy of their written public domain dedication). 
+\par If an existing source file does not contain any GRL copyright notice, add a 
+new line following any existing copyright notices and including the year in which 
+the modifications were created. If the existing source file contains no copyright 
+notice, unless it is absolutely clear what the copyright status is of the work, staff 
+should assume it is actually copyrighted by someone and therefore it should not 
+be used as to do so would risk infringing that unknown copyright when the 
+combined work is distributed. One scenario in which no copyright notice would be 
+present is if the work has been dedicated to the public domain by the author. In 
+that instance, please ensure that a public domain dedication is present in the file. 
+If the file is clearly in the public domain but it does not say so in the file (i.e. because 
+staff have communicated directly with the author, or the public domain dedication was 
+listed on the download site), add a comment to the file indicating that portions of it 
+are based on that earlier work which was placed into the public domain (give the 
+name of the author and include a copy of their written public domain dedication). 
 
 \par Note that it is important to comply with the terms of license under 
-which you received the original source file, and in some cases that may limit 
-under which license(s) it is acceptable to distribute a combined work that 
-includes that source code and your own code. In some instances, it is possible 
-you may not be able to combine arbitary third-party code into a combined work 
-without violating the licensing terms of any of them, so please be aware of any 
-license restrictions before you start using any third-party source code or libraries. 
+which original source files were received, and in some cases that may limit 
+under which license(s) it is acceptable to distribute a combined work  
+including that original source code and other code. In some instances, it may not  
+be possible to combine arbitary third-party code into a combined work without 
+violating the licensing terms of at least one of them, so it is important to be aware 
+of any license restrictions before starting to use third-party source code or libraries. 
 Note that it is possible to combine material available under multiple different 
-third-party licenses provided they are all compatible \cite{define:compatible} with 
-the license under which you distribute the combined work. 
+third-party licenses provided they are all compatible with the license under which 
+the combined work is distributed.
 
 
 
@@ -412,9 +413,10 @@ the license under which you distribute the combined work.
 should include their own name in the file, usually on an ``Author'' line in the 
 same comment block as the copyright notice and license text). In addition, it is 
 good practice to use a source control system (such as git or svn) that allows 
-individual line-level contributions to be attributed to specific individuals. If 
+individual line-level contributions to also be attributed to specific individuals. If 
 contributions are accepted from third-parties, they should also indicate their 
-authorship within each file (in addition to any copyright notices they may add).
+authorship within each file (in addition to any copyright notices they may be 
+required to add).
 
 \par The purpose of these records is twofold: 
 \begin{itemize}
@@ -429,6 +431,9 @@ researchers who worked on the paper
 representation of the set of individuals who contributed to the work in each 
 individual file and should never be modified except to correct actual errors. 
 
+\par Licenses chosen for distribution should require  recipients to preserve
+authorship records in any versions they redistribute. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Recommended licenses
@@ -441,7 +446,8 @@ of the software can use, modify, and redistribute the code.
 
 \par Most (but not all) free software licenses require the user of the code (the licensee) 
 to maintain copyright, attribution, and disclaimer statements in any versions of the 
-source code and binaries which they redistribute. 
+source code and binaries which they redistribute. These licenses should be chosen 
+whenever possible in order that authorship records (attribution) be preserved. 
 
 \subsubsection{Permissive licenses}
 \par Some licenses (permissive licenses) don't include any additional restrictions on 
@@ -473,7 +479,9 @@ licensee is allowed to do, generally in the interest of ensuring that the code a
 any modifications to the code, continues to stay free. 
 
 The choice between alternative licenses depends on 
-what additional obligations you wish to place on the licensee. There are three additional obligations to consider: 
+what additional obligations are to be placed on the licensee. 
+
+There are three additional obligations to consider: 
 
 \begin{enumerate}
 \item The licensee is additionally required to distribute any modified versions of the 
@@ -527,11 +535,6 @@ which in the case of LGPL, GPL and AGPL includes a link to the primary web site
 documenting the full license. Any of these licenses is acceptable as satisfying 
 requirements above, so long as the copyright is assigned to GRL 
 and the author(s) names are given.
-
-Given the legal nature of these boilerplate headers they must not be edited. If there is an 
-additional license requirement that requires modification or addition to the text or the 
-adoption of a different free software compatible license, this must be agreed with the 
-IC first and in consultation with the \exectitle\ (\execperson).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
