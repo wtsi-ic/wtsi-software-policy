@@ -12,7 +12,8 @@
 
 \title{
 Wellcome Trust Sanger Institute \\
-Software Policy
+Software Policy\\
+DRAFT
 }
 \author{WTSI Informatics Committee}
 \date{December 2014}
@@ -62,15 +63,15 @@ Software Policy
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Assign copyright to Genome Research Ltd}
 \label{section:policy.copyright}
-\par It is a condition of employment and of being granted visiting worker status at the 
-Wellcome Trust Sanger Institute (the Institute) that software created in the course 
-of work with the Institute is considered work made for hire and must have 
+\par It is a condition of employment and of being granted visiting worker status 
+at the Wellcome Trust Sanger Institute (the Institute) that software created in the 
+course of work with the Institute is considered work made for hire and must have 
 copyright in the source code assigned to Genome Research Ltd (GRL) unless it 
 falls under a general or specific exception (see section \ref{section:exceptions}). 
 A copyright notice must be included along with all source code indicating that 
 GRL is a copyright holder (normally this would be included near the top of each 
-source code file in a comment block; see section \ref{section:howto.copyright} for best 
-pratices on how to indicate copyright). 
+source code file in a comment block; see section \ref{section:impnotes.copyright} 
+for best pratices on how to indicate copyright). 
 
 % Scope
 \par This condition applies whether the employee or visiting worker (staff) 
@@ -90,17 +91,21 @@ otherwise.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Release publicly in advance of publication}
 
-\par Software that supports published work authored by GRL employees 
-(e.g. software implementing methods described in a methods paper, software 
-presented in an application note, software used in analysis and/or data 
-processing for a research paper describing the results of those analyses and 
-processing, etc.) must be released publicly using an acceptable license 
-(see section \ref{section:policy.licenses}) by the time of the related publication 
-at the very latest. 
+\par Software under GRL copyright that directly supports published work authored 
+by GRL employees (e.g. software implementing methods described in a methods 
+paper or software presented in an application note) must be released publicly 
+using an acceptable free software license (see section \ref{section:policy.licenses}) 
+by the time of the related publication at the very latest. 
+
+\par Useful and potentially reusable software under GRL copyright that 
+represents a substantial portion of the analysis and/or processing that went into 
+producing results presented in a research paper should also be released 
+publicly using an acceptable license by the time the research paper is 
+published. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Acceptable licenses
+% Release using an acceptable free software license
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Release using an acceptable free software license}
 \label{section:policy.licenses}
@@ -117,11 +122,11 @@ acceptable as well, provided they meet the requirements listed in the Free
 Software Foundation's definition. 
 
 \par Prior to distributing a particular piece of software outside the Institute for the 
-first time (including sending privately to an external collaborator or uploading code 
-to public source control repositories such as \url{http://github.com/} 
-or \url{http://sourceforge.net}), the original author(s) should, in conjunction with their 
-line management, choose a free software license and apply it to the source code 
-according to the best practices for that particular license 
+first time (including sending privately to an external collaborator or developing 
+code in public such as by using \url{http://github.com/} or 
+\url{http://sourceforge.net/} for source control), the original author(s) should, in 
+conjunction with their line management, choose a free software license and apply 
+it to the source code according to the best practices for that particular license 
 (see section \ref{section:impnotes.recommended} for a set of recommended 
 licenses along with best practices for applying them). Staff do not have to choose 
 one of the recommended licenses, but if they do not, they must make sure that it 
@@ -171,7 +176,8 @@ software license.
 \par Staff must respect the copyright interests of others, in particular when producing 
 software which falls under GRL copyright. Were GRL copyrighted code to be found 
 to be infringing on the copyright of others, reputational damage to the Institute could 
-occur, and the copyright status of our other software may be called into question. 
+occur, and the copyright status of other software under GRL copyright may be called 
+into question. 
 
 \par In general, it is good development practice to reuse code when possible, and in 
 many cases there are good free software libraries that are available for 
@@ -197,10 +203,10 @@ not clear into GRL copyrighted software and should assume that any software
 that contains neither a copyright notice nor a public domain dedication is copyrighted 
 material that must not be used. 
 
-
-\par Staff should also keep records of the individual authors who have contributed to 
+\par Staff should also keep records of all individual authors who have contributed to 
 each source file in order to assist GRL with any legal challenges to the copyright 
-status of the work (see section \ref{section:impnotes.records} for best practices in this regard). 
+status of the work (see section \ref{section:impnotes.records} for best practices in 
+this regard). 
 
 
 
@@ -257,7 +263,7 @@ that determines whether a particular set of modifications is copyrightable.
 \item Small bug fixes and enhancements to third-party software
 
 \par Staff may, in the course of their work, have occasion to modify software 
-developed by third parties. It is often desirable that those changes be contributed 
+developed by third parties. It is often desirable that changes be contributed 
 back to the third party maintainer so that others can benefit from the modifications. 
 In many cases, this can be done within the contraints of this policy by simply 
 assigning copyright in the modified code to GRL and providing the modified code 
@@ -284,6 +290,13 @@ In other words, there is a lifetime limit for each member of staff under this ge
 exception to contribute up to 100 lines of code (or one working day of 
 development effort) to each individual third-party software package, beyond 
 which a specific exception should be obtained. 
+
+\par Staff are authorised to self-certify that they are allowed to contribute code 
+under the terms of this clause (e.g. you can write a declaration that says 
+something to the effect of: ``I wrote this code and am authorised to contribute 
+it to the project''). However, if a third-party requires a document signed 
+by the employer, staff should obtain a specific exception (see 
+section \ref{section:exceptions.special}) and ask for a letter signed by the \exectitle.
 
 \end{itemize}
 
@@ -316,7 +329,6 @@ third-party organisation's records).
 
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -331,7 +343,7 @@ third-party organisation's records).
 % How to indicate copyright
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{How to indicate copyright}
-\label{section:howto.copyright}
+\label{section:impnotes.copyright}
 \par To assign copyright in software source code to GRL, a copyright notice should 
 be included within its source code (normally within a comment block in the first 
 few lines of each file). If a piece of software is comprised of multiple source code 
@@ -355,13 +367,13 @@ Copyright (C) <YEARS> Genome Research Ltd.
 \end{verbatim}
 
 \par Where `\texttt{<YEARS>}' should include the list of years in which copyrightable 
-contributions \cite{define:copyrightable} were made to the software. Each such year 
-should be listed individually and separated by commas. A range of years (separated 
-by dashes) should ideally not be used as it tends to lead to confusion and mistakes. 
-If a range of years is used in any source file, a notice must be included in the 
-documentation that indicates that the range of years should be interpreted as being 
-equivalent to a list of years from the first to the last and including each consecutive 
-year in between (see appendix \ref{appendix:range.of.years}). 
+contributions were made to the software. Each such year should be listed individually 
+and separated by commas. A range of years (separated by dashes) should ideally 
+not be used as it tends to lead to confusion and mistakes. If a range of years is used 
+in any source file, a notice must be included in the documentation that indicates that 
+the range of years should be interpreted as being equivalent to a list of years from the 
+first to the last and including each consecutive year in between 
+(see appendix \ref{appendix:range.of.years}). 
 
 \subsubsection{Modifications to existing code}
 \par Whenever you modify an existing source file in a way which includes copyrightable 
@@ -374,47 +386,53 @@ accomplished by simply appending the year in which your modifications were creat
 to the end of the list of years in the existing copyright notice. If that year is already 
 listed, you do not need to make any changes to the notice. 
 
-\par If an existing source file does not contains any GRL copyright 
-notice, you should add a new line following any existing copyright notices and 
-including the year in which the modifications were created. If the existing source 
+\par If an existing source file does not contain any GRL copyright 
+notice, you should add a new copyright line following any existing copyright notices 
+and including the year in which the modifications were created. If the existing source 
 file contains no copyright notice, unless you are absolutely certain what the 
 copyright status is of the work, you should assume it is actually copyrighted by 
-someone unknown to you and therefore should not use it as to do so would risk 
+someone unknown to you and therefore should not use it, as to do so would risk 
 infringing that unknown copyright when you distribute the combined work. One 
 scenario in which no copyright notice would be present is if the work has been 
-dedicated to the public domain by the author. In that instance, please ensure 
+dedicated to the public domain by the author. In that instance, ensure 
 that a public domain dedication is present in the file. If you know 
 that the file is in the public domain but it does not say so in the file (i.e. because 
 you asked the author and received confirmation via personal communication), 
 add a comment to the file indicating that portions of it are based on that earlier 
-work which was placed into the public domain (give the name of the author and 
-include a copy of their written public domain dedication). 
+work which was placed into the public domain (in that case, give the name of the 
+author and include a copy of their written public domain dedication). 
 
 \par Note that it is important to comply with the terms of license under 
-which you received the original source file, and in some cases that may limit 
-under which license(s) it is acceptable to distribute a combined work that 
-includes that source code and your own code. In some instances, it is possible 
-you may not be able to combine arbitary third-party code into a combined work 
-without violating the licensing terms of any of them, so please be aware of any 
-license restrictions before you start using any third-party source code or libraries. 
-Note that it is possible to combine material available under multiple different 
-third-party licenses provided they are all compatible \cite{define:compatible} with 
-the license under which you distribute the combined work. 
+which source files are received from external sources (see 
+\ref{section:policy.protection}). In some cases that may limit under which license(s) 
+it is acceptable to distribute a combined work which includes externally developed 
+source code and GRL copyrighted code. In extreme cases, it may even be 
+impossible to combine multiple pieces of third-party code under different 
+licenses without violating the licensing terms of at least one of them (for example 
+GPLv2 code cannot be combined with Apache 2.0 code), so 
+please be aware of any license restrictions before you start using any third-party 
+source code or libraries. Note that it is possible to combine material available 
+under multiple different third-party licenses provided they are all compatible with 
+the license under which the combined work is distributed. 
 
+\url{http://www.softwarefreedom.org/resources/2007/gpl-non-gpl-collaboration.html}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Individual authorship records
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Individual authorship record}
+\subsection{Individual authorship records}
 \label{section:impnotes.records}
 \par Each staff member who makes copyrightable contributions to a source file 
 should include their own name in the file, usually on an ``Author'' line in the 
-same comment block as the copyright notice and license text). In addition, it is 
-good practice to use a source control system (such as git or svn) that allows 
-individual line-level contributions to be attributed to specific individuals. If 
-contributions are accepted from third-parties, they should also indicate their 
-authorship within each file (in addition to any copyright notices they may add).
+same comment block as the copyright notice and license text). Staff members 
+may also choose to include an email address to aid in identifying and contacting 
+them in the future, should any issues arise regarding the copyright status of the 
+work. In addition, it is good practice to use a source control system (such as git 
+or svn) that allows individual line-level contributions to be attributed to specific 
+individuals. If contributions are accepted from third-parties, they should also 
+indicate their authorship within each file (in addition to any copyright notices 
+they may add as appropriate).
 
 \par The purpose of these records is twofold: 
 \begin{itemize}
@@ -431,6 +449,55 @@ individual file and should never be modified except to correct actual errors.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Application of license
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Applying a license}
+
+\par In addition to the copyright notices which are required to be included in each 
+source code file regardless of whether or not software is ever distributed outside 
+the institute, any software that is distributed outside the Institute must have 
+one of the acceptable free software licenses applied to your code so that it is 
+clear to recipients what the license terms are under which they are receiving 
+the software. 
+
+\par A statement must be added to each source code file following the copyright 
+notice and author record and indicating under which license(s) the code is 
+available and under what terms it can be copied, modified, and redistributed. 
+In the case of short licenses (including any of the recommended permissive 
+licenses) the best way to do that is to include the full text of the license in each 
+source file. Other licenses (including all of the recommended copyleft licenses) 
+have a much longer license document which would not be reasonable to include 
+within each source file. For such licenses, a copying permission statement should 
+be included in each source file in place of the actual license, and that statement 
+should indicate what license applies and where the licensee can find a copy of 
+that license. The authors of the license will normally provide an appropriate 
+statement or template to be used for that purpose.
+
+\par In addition, it is good practice to take additional steps to make the license 
+terms clear to users who may not be accustomed to reading the source code 
+to software they obtain: 
+\begin{itemize}
+\item state on any web pages providing access to the software under which 
+license it is available
+
+\item provide the full text of the license in the root directory of any distribution 
+(including a source code or binary distribution) -- usually this is included in a file 
+called \filename{LICENSE} or \filename{COPYING}
+
+\end{itemize}
+
+\subsubsection{Boilerplate}
+
+\par Boilerplate templates that can be used (with the addition of appropriate 
+comment characters) to begin a new source code file under each of the 
+recommended licenses (see section \ref{section:impnotes.recommended}) can 
+be found in Appendix \ref{appendix:boilerplate}. For other free software licenses, 
+use the general format of these boilerplate (i.e. copyright notice first, then 
+author records, then license instructions) but follow the guidelines for applying 
+the license as specified by the license authors. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Recommended licenses
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Recommended licenses}
@@ -439,145 +506,135 @@ individual file and should never be modified except to correct actual errors.
 \par Different free software licenses impose different restrictions on how recipients 
 of the software can use, modify, and redistribute the code. 
 
-\par Most (but not all) free software licenses require the user of the code (the licensee) 
-to maintain copyright, attribution, and disclaimer statements in any versions of the 
-source code and binaries which they redistribute. 
+\par All of the free software licenses we recommend share the requirement that 
+a recipient of the code (the licensee) must maintain copyright, attribution, and disclaimer 
+statements in any versions of the source code and binaries which they redistribute. 
+They also all include a warranty/liability disclaimer, basically saying that the software 
+is provided without any warranty and that it isn't the fault of the copyright holders if 
+the software causes any unintention harm to the licensee. 
 
 \subsubsection{Permissive licenses}
-\par Some licenses (permissive licenses) don't include any additional restrictions on 
-the licensee. That means that a piece of software licensed under a permissive 
-license allowed the licensee can take the code, combine it with their own software, 
-modify it to include additional functionality, and sell it to others under a nonfree 
-license without sharing the source code of the software (or their changes) with anyone. 
-These licenses are a good choice when there is little or no potential for paid-license 
-commercialisation (because being available under a permissive license undermines 
+\label{section:impnotes.recommended.permissive}
+\par Some licenses (permissive licenses) don't include many additional restrictions on 
+the licensee. In practice, this means that under a permissive license the licensee is 
+allowed to take the code, combine it with their own software, modify it to include 
+additional functionality, and sell it to others under another license terms (including 
+nonfree licenses) without sharing the source code of the software (or their changes) 
+with anyone. 
+
+\par These licenses may be a good choice when:
+\begin{itemize}
+\item there is little or no potential for paid-license commercialisation (because being available under a permissive license undermines 
 the business case for a paid license), or when the benefits of being permissive outweigh 
-the benefits from any potential commercialisation. Because the license terms are 
+the benefits from any potential commercialisation; and 
+\item substantial development is not expected to occur outside of the Institute, and if it does, it is acceptable that modified versions may not be made available. 
+\end{itemize}
+Because the license terms are 
 more permissive, software under permissive licenses might tend to get more use 
-(especially without companies) than software under more restrictive free licenses, 
+(especially within companies) than software under more restrictive free licenses, 
 so it might be a good choice if the most important factor is to have the software used 
 as widely as possible (for example, software which serves as the reference 
 implementation for a data format standard). 
 
 \par Permissive licenses that are recommended for use include: 
 \begin{itemize}
-\item 3-clause modified BSD (mBSD) license 
-\item X11 license
-\item MIT license
-\item Apache 2.0 license
+\item Apache License, Version 2.0 (Apache) (\url{https://www.gnu.org/licenses/license-list.html#apache2})
+\item Expat License (MIT) (\url{https://www.gnu.org/licenses/license-list.html#Expat})
+\item Modified BSD license (mBSD) (\url{https://www.gnu.org/licenses/license-list.html#ModifiedBSD})
 \end{itemize}
+
+The MIT license and mBSD license are quite similar permissive licenses except that the 
+mBSD license explicitly prohibits the use of the name of the copyright holder to endorse 
+or promote products derived from the software without permission. However, that explicit 
+statement is probably not required as permission would be required to claim any 
+endorsement, so functionally the MIT and mBSD licenses are equivalent. Both of those 
+licenses are so short that the full license text should be included near the top of each and 
+every source code file (see Appendix \ref{appendix:boilerplate} and \ref{appendix:examples} 
+for boilerplate templates and examples). These licenses are compatible with most other 
+free software licenses (including the recommended copyleft licenses; see section 
+\ref{section:impnotes.recommended.copyleft}) -- this means that a licensee of software 
+conveyed to them under MIT or mBSD licenses can be redistributed under the terms of 
+another license such as the GPL. 
+
+The Apache license is also fairly permissive, but offers additional protections to the 
+in the form of patent termination and indemnification clauses. This basically means 
+that the copyright holders automatically grant the licensee a royalty-free patent license 
+such that using the software would never be considered patent infringement. It also 
+terminates those automatic patent licenses if the licensee files a lawsuit against anyone 
+claiming that the software infringes on their patents. The Apache license is therefore 
+a good choice for a permissive license, although it is important to note that those 
+additional provisions make it less compatible with other licenses. In particular, it is 
+not possible to combine code under a GPLv2 license (without the "or later version" 
+clause) and the Apache license, whereas this can be done with the MIT or mBSD 
+licenses. 
 
 \subsubsection{Copyleft licenses}
+\label{section:impnotes.recommended.copyleft}
 \par Other licenses (copyleft licenses) place additional restrictions on what the 
-licensee is allowed to do, generally in the interest of ensuring that the code and 
+licensee is allowed to do, generally in the interest of ensuring that the code, and 
 any modifications to the code, continues to stay free. 
 
-The choice between alternative licenses depends on 
-what additional obligations you wish to place on the licensee. There are three additional obligations to consider: 
+\par Three common copyleft restrictions are: 
 
 \begin{enumerate}
-\item The licensee is additionally required to distribute any modified versions of the 
-source code under the same license terms. 
-\item The licensee is required to adopt the same license for any additional code that it 
-is combined with to create a single piece of software. 
-\item The licensee is additionally required to distribute the source code which 
+\item the licensee is additionally required to distribute any modified versions of the 
+source code under the same license terms (weak copyleft) \label{copyleft.weak}
+\item the licensee is required to adopt the same license for any additional code that it 
+is combined with to create a single piece of software (strong copyleft) \label{copyleft.strong}
+\item the licensee is additionally required to distribute the source code which 
 corresponds to the version of the software running on a network server to all 
 users interacting with the software remotely through a computer network (if the 
-modified software supports such interaction) at no charge. 
+modified software supports such interaction) at no charge (strong network copyleft) \label{copyleft.strong.network}
 \end{enumerate}
 
-If the 1st and 3rd obligations are \textbf{not} required, a licensee is free to take the code, modify 
-it and redistribute it under any terms that they wish, including commercially, only 
-maintaining attribution and disclaimers to the original authors. This may not be a 
-problem, since it does not interfere with any continued distribution of code by GRL, 
-however it may mean external code improvements cannot be incorporated by GRL into 
-its original code. Reasons for not requiring this obligation could be when you wish the 
-code to be as widely adopted as possible, including within companies and when you do 
-not fear a commercial competitor. The \textbf{Modified-BSD license} (as used by X11 
-consortium) is appropriate in this case. Ensembl uses a variant of this license, which 
-includes additional clauses related to the Ensembl name which is a registered trade 
-mark. 
- 
-If the 1st obligation is required but the 2nd and 3rd obligations are \textbf{not}, a licensee is free 
-to use the code as a component of a larger project but is free to distribute that larger 
-project as a whole under what ever terms they wish. Choosing this combination of 
-options is useful in cases where the project is a software library (e.g. biojava, bioperl) 
-and the authors wish to ensure all library code is distributed under the same license, 
-but want the library as a whole to be as widely used as possible, so do not want to 
-restrict what software it is used as a component of. To enforce only the 1st obligation, 
-the \textbf{LGPL license} is appropriate. This license obliges a licensee to enable the use of the 
-licensee's program with whatever version of the LGPLed library a user sees fit, 
-including one that that user has just modified themself. 
+If the \ref{copyleft.weak}st requirement is required but the \ref{copyleft.strong}nd and 
+\ref{copyleft.strong.network}rd requirements are \textbf{not}, a licensee would be free 
+to use the code as a component of a larger project (e.g. by linking) and could distribute 
+that larger project as a whole under any terms they wish. However, if modifications are 
+made to the actual code conveyed under these terms, the licensee would have to make 
+those modifications available to anyone to whom they convey the source code. 
+Choosing this combination of options is most often done when the project is a software 
+library (e.g. biojava, bioperl) and the authors wish to ensure all library code is distributed 
+under the same license, but want the library as a whole to be as widely used as possible, 
+so do not want to restrict what software it is used as a component of. 
 
-To enforce the 1st and 2nd obligation but not the 3rd, (such as is done by many high 
-profile projects such as mysql and many self contained Sanger projects), the \textbf{GPL 
-license} is appropriate. If your software provides user interaction over a network (such 
-as an application with a web-based user-interface) then you may also consider requiring 
-the 3rd obligation, in which case the \textbf{AGPL license} may be appropriate. Unless your 
-project fits with one of the situations described above, the GPL (or AGPL) license is the 
-most generally applicable license to use. It is also safe to use the AGPL on software that 
-does not yet have any remote user interaction (e.g. a web interface) if you want to 
-ensure that any future use of the software that does provide remote user interaction will 
-be required to provide any modifications that have been made to your source code to 
-the users of that service (this would not be required under the GPL if the modified 
-version of your software is only run on a server but not distributed to others). 
- 
-The standard boilerplate header for each of these licenses is given in Appendix A, 
-which in the case of LGPL, GPL and AGPL includes a link to the primary web site 
-documenting the full license. Any of these licenses is acceptable as satisfying 
-requirements above, so long as the copyright is assigned to GRL 
-and the author(s) names are given.
-
-Given the legal nature of these boilerplate headers they must not be edited. If there is an 
-additional license requirement that requires modification or addition to the text or the 
-adoption of a different free software compatible license, this must be agreed with the 
-IC first and in consultation with the \exectitle\ (\execperson).
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Failure to comply
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Failure to comply}
-\label{section:policy.copyright.failure}
-\par Failing to comply with this policy may put the Institute's legal position with respect 
-to its intellectual property at risk and may undermine our ability to protect the 
-substantial investment we have made in software development, including the protection 
-of works made available under free software licenses. 
-
-\par In addition, distribution of software in a manner not consistent with this policy could be 
-considered an infringement of GRL's copyright interest in the work (for which the 
-Institute could seek damages). Worse, distribution of software including a copyright 
-notice claiming a personal copyright or assigning copyright to another 
-organisation when in fact the software is a work made for hire for the Institute may 
-be considered a form of fraud (in which case anyone harmed by the false 
-statement could potentially sue for damages, and for which one may even be subject 
-to criminal prosecution in some jurisdictions). 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Application of license
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Applying a license}
-
-Once you have chosen the license you wish to use, you must apply the license so that 
-people can see it. For software that is made available outside the Institute, at a 
-minimum you must:
-
+To enforce only the \ref{copyleft.weak}st requirement, we recommend:
 \begin{itemize}
-\item state on webpages providing access to the software which license is applied 
-\item provide the full text of the license in the root directory of any source code 
-distribution (usually in a file called \filename{LICENSE.TXT}) 
-\item insert the appropriate header (created from one of standard boilerplates given in 
-the Appendix A) at or near the start of each separate source code file. Since these 
-boilerplates are legal statements it is important that the text is not edited in any 
-way beyond substituting the required names and dates.
-\item provide the full text of the license in the root directory of any non-source project 
-distributions (usually in a file called \filename{LICENSE.TXT}). 
-\item provide basic documentation in the root directory of any source code 
-distribution, and include all clauses found in Appendix B in that documentation 
-(usually in a file called \filename{README.TXT}). 
+\item GNU Lesser General Public License (LGPL) version 3 (or later) (\url{https://www.gnu.org/licenses/license-list.html#LGPL})
 \end{itemize}
+
+To enforce the \ref{copyleft.weak}st and \ref{copyleft.strong}nd requirements but not the 
+\ref{copyleft.strong.network}rd, (such as is done by many high profile projects such as 
+mysql, the Linux kernel, GCC, the GNU science library, and many self contained Sanger 
+projects), we recommend:
+\begin{itemize}
+\item GNU General Public License (GPL) version 3 (or later) (\url{https://www.gnu.org/licenses/license-list.html#GNUGPL})
+\end{itemize}
+
+To provide additional protections against licensees modifying the software and not sharing 
+those modifications with end users, and especially if the software involves user interaction 
+over a network (such as an application with a web-based user-interface), the 
+\ref{copyleft.strong.network}rd requirement may be appropriate to require as well. 
+In that case we recommend:
+\begin{itemize}
+\item GNU Affero General Public License (AGPL) version 3 (or later) (\url{https://www.gnu.org/licenses/license-list.html#AGPL})
+\end{itemize}
+
+\par It is safe to use the AGPL on software that does not actually involve any remote 
+user interaction if you want to ensure that any future use of the software that does provide 
+remote user interaction will be required to provide any modifications that have been made 
+to your source code to the users of that service. For example, software for genomic analysis 
+which runs only on a single machine might be installed into a cloud-based genomic analysis 
+service and offered to end users for data analysis. If licensed under the AGPL, the 
+cloud service would be required to provide the full source code for the version of software 
+that they provide for their customers to run (including any modifications they have made) 
+to any customers who interacts with the service to analyse data. If the genomic analysis 
+software had been licensed under GPL or a less restrictive license, the cloud service would 
+be permitted to modify the software and to run their modified version on customer data 
+without providing them with the source code for those changes or even informing them of 
+what changes have been made. 
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -588,7 +645,7 @@ distribution, and include all clauses found in Appendix B in that documentation
 \par None of the free software licenses are exclusive licenses, so it 
 is possible for copyright holder(s) to license software under 
 a nonfree commercial license that is also available publicly under a free 
-software license, although in that case the more restrictive ``copyleft'' 
+software license, although in that case the more restrictive copyleft 
 licenses (such as the GPL or AGPL) may offer a better business
 proposition for a ``paid license'' form of commercialisation than would 
 a more permissive license (such as mBSD or Apache). On the other hand, 
@@ -613,78 +670,139 @@ GRL).
 % Old code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Code not conforming to these conditions}
+\label{section:impnotes.oldcode}
 
-\par Any code written entirely by staff that is distributed publicly (e.g. on the 
+\subsubsection{Software written entirely by staff}
+\label{section:impnotes.oldcode.grlcopyright}
+\par Any software written entirely by staff that is distributed publicly (e.g. on the 
 Institute's web or ftp sites, on Institute-affliated GitHub repositories, etc) 
-should contain copyright notices and an acceptable free software license. 
+should contain GRL copyright notices and an acceptable free software license 
+as required by this policy (unless a specific exception has been granted). 
+Copyright notices that are incorrect (e.g. staff claimed a personal copyright 
+when in fact the copyright is owned by GRL) should be corrected. Please 
+note that it is possible that some staff have historically had employment 
+contracts that do not require them to assign copyright, and in that case 
+personal copyright notices must be preserved (see section 
+\ref{section:impnotes.oldcode.thirdparty}).
 
-\par If existing software is being distributed from which copyright notices 
-and/or licensing statements have been omitted from some or all source 
-code files, then this policy should be applied and the notices and license 
-text added as appropriate. Importantly, the year(s) included in a copyright 
-notice should reflect the actual year(s) in which copyrightable code was 
-created -- it is not acceptable to simply add the current year to a file unless 
-you make a new creative contribution to it. Use any available information 
-(e.g. source control records, release notes, etc) to ascertain the original 
-year(s) during which substantive contributions were made to each file as
-well as the authors involved (contact them if possible). It is generally better 
-to err on the side of including an earlier copyright year rather than a later 
-year if there is any doubt as to the actual year(s) involved (i.e. if you know 
-the original date the file was created but are not sure when it was modified, 
-include at least that original year of creation). 
+\par If the latest publicly available version of existing software is one in which  
+copyright notices and/or licensing statements have been omitted from some or 
+all source code files, then this policy should be applied to that software and 
+the notices and license text added as appropriate to bring it into line with this 
+policy (it is acceptable to make a new release of the software that is compliant 
+while keeper older noncompliant releases available for download for 
+historical/archival purposes). 
 
-If the existing release does not include any license whatsoever, the IC should 
-be informed and should decide an appropriate license to apply to the 
-software. 
+\par Importantly, the year(s) included in a copyright notice should reflect the 
+actual year(s) in which copyrightable code was created -- it is not acceptable 
+to simply add the current year to a file unless you have made a new creative 
+contribution to it. Use any available information (e.g. source control records, 
+release notes, etc) to ascertain the original year(s) during which substantive 
+contributions were made to each file as well as the authors involved (contact 
+them if possible). It is generally better to err on the side of including an earlier 
+copyright year rather than a later year if there is any doubt as to the actual year(s) 
+involved (i.e. if you know the original date the file was created but are not sure 
+when it was modified, include at least that original year of creation). 
+
+\par If the latest release does not include any license whatsoever, it is 
+acceptable for staff to treat it as if it had not yet been publicly released, decide 
+on an initial license, and release a new version under that license 
+(see section \ref{section:policy.licenses}). 
+
+\par If the software includes a license which is not acceptable or contains 
+multiple incompatible licenses, IC should be informed and should decide an 
+appropriate license to apply to the software as a whole. 
+
+\subsubsection{Software including third-party code}
+\label{section:impnotes.oldcode.thirdparty}
+
+\par Software which is not compliant with the requirements in this policy but 
+which includes code with a copyright held by third-parties needs to be handled 
+carefully. If it can be determined what contributions were written by staff as 
+opposed to third parties, any missing GRL copyright notices should be added 
+alongside third-party copyright notices. 
+
+\par The license status of each piece of code not under GRL copyright should 
+be determined, and the entire package should only be released under a license 
+that is compatible with the terms of all individual licenses. If the licenses are 
+incompatible, further distribution of the software should be stopped until the 
+situation can be resolved. It may be necessary to remove some component of 
+the software in order to legally release such software, although in some cases 
+it may also be possible to contact the copyright holder for one or more of the 
+components and obtain a different license for the code. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % External projects
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{OLD*******Collaborations with others, and contributions to open source projects}
-
-The following considerations apply when GRL employees or Sanger visiting/hosted 
-scientists make substantial contributions to code maintained in collaboration with 
-others outside the institute: 
-
-\begin{itemize}
-\item If the code is made publicly available under one of the standard acceptable open 
-source licenses, or another license and header text that has been approved as 
-described above, then again the line manager can approve contribution to the 
-project, so long as a copyright statement is in place and the author's contribution 
-is acknowledged. The copyright statement should include GRL as one of the 
-copyright holders if a substantial fraction (say more than 25\% of the file) was 
-written by a GRL employee or Sanger visiting/hosted scientist. 
-\item If the code is developed as part of a research collaboration, and the software itself 
-is a primary aim of the collaboration, then we would expect to require the 
-software to be made widely available under an agreed license. If the 
-collaboration is primarily about other matters, such as the generation and 
-analysis of data, then it is acceptable for the software not to be distributed 
-outside the collaboration, but even in this case a copyright statement and 
-authorship attribution are required.
-\item There may be cases where other arrangements are required, for example in 
-collaborations with instrument manufacturers. In these cases a more formal 
-agreement is required, which needs to be approved by the Director of Corporate 
-Services who may consult the Wellcome Trust.
-\item In some cases we use external software and either find and fix a bug, or make a 
-useful modification, and want to feed that back to the author/copyright holder. 
-Small bug fixes or enhancements of less than 100 lines or so of code are exempt 
-from the provisions of this document. Larger contributions can also be made if 
-authorised by an IC member. 
-\end{itemize}
-
+%\subsection{OLD*******Collaborations with others, and contributions to open source projects}
+%
+%The following considerations apply when GRL employees or Sanger visiting/hosted 
+%scientists make substantial contributions to code maintained in collaboration with 
+%others outside the institute: 
+%
+%\begin{itemize}
+%\item If the code is made publicly available under one of the standard acceptable open 
+%source licenses, or another license and header text that has been approved as 
+%described above, then again the line manager can approve contribution to the 
+%project, so long as a copyright statement is in place and the author's contribution 
+%is acknowledged. The copyright statement should include GRL as one of the 
+%copyright holders if a substantial fraction (say more than 25\% of the file) was 
+%written by a GRL employee or Sanger visiting/hosted scientist. 
+%\item If the code is developed as part of a research collaboration, and the software itself 
+%is a primary aim of the collaboration, then we would expect to require the 
+%software to be made widely available under an agreed license. If the 
+%collaboration is primarily about other matters, such as the generation and 
+%analysis of data, then it is acceptable for the software not to be distributed 
+%outside the collaboration, but even in this case a copyright statement and 
+%authorship attribution are required.
+%\item There may be cases where other arrangements are required, for example in 
+%collaborations with instrument manufacturers. In these cases a more formal 
+%agreement is required, which needs to be approved by the Director of Corporate 
+%Services who may consult the Wellcome Trust.
+%\item In some cases we use external software and either find and fix a bug, or make a 
+%useful modification, and want to feed that back to the author/copyright holder. 
+%Small bug fixes or enhancements of less than 100 lines or so of code are exempt 
+%from the provisions of this document. Larger contributions can also be made if 
+%authorised by an IC member. 
+%\end{itemize}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Signing-off 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{OLD*******Contributions to open source projects that require ``signing off''}
+%
+%Some open source projects require code to be ``signed-off'' with a declaration that says ``I 
+%wrote this code and am authorized to contribute it to the project'' (see section 5 in 
+%\url{http://linux.yyz.us/patch-format.html} for an example). The \exectitle\ can authorise 
+%code to be contributed in this fashion. 
+%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Signing-off 
+% Risks of noncompliance
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{OLD*******Contributions to open source projects that require ``signing off''}
 
-Some open source projects require code to be ``signed-off'' with a declaration that says ``I 
-wrote this code and am authorized to contribute it to the project'' (see section 5 in 
-\url{http://linux.yyz.us/patch-format.html} for an example). The \exectitle\ can authorise 
-code to be contributed in this fashion. 
+\subsection{Risks of non-compliance}
+\label{section:policy.copyright.risks}
+\par Failing to comply with this policy may put the Institute's legal position with 
+respect to its intellectual property at risk and could undermine our ability to protect 
+the substantial investment we have made in software development, including 
+the protection of works made available under free software licenses and those 
+involved in commercial partnerships. 
 
-
+\par In addition, distribution of software by staff in a manner not consistent with 
+this policy could be considered an infringement of GRL's copyright interest in the 
+work (for which the Institute would be within its rights to seek damages). Worse, 
+distribution of software including a copyright notice claiming a personal copyright 
+or assigning copyright to another organisation when in fact the software is a work 
+made for hire for the Institute would be a misrepresentation of the facts and could 
+potentially be considered a form of fraud. In that case anyone harmed by the false  
+statement (such as other contributors to the software or those who have received 
+and used it under an invalid license) could potentially sue the responsible staff 
+member for damages. Staff should also be aware that making false copyright 
+claims is illegal in some jurisdictions, and so knowingly doing so could expose 
+the staff member to the possibility of criminal prosecution. 
 
 
 
@@ -761,6 +879,7 @@ but must be included somewhere in the documentation.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Examples}
+\label{appendix:examples}
 
 \subsection{GPL example with a single author}
 \begin{boilerplate}
