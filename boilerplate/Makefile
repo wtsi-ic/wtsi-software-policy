@@ -1,3 +1,5 @@
+.SUFFIXES:
+
 define hash_rules
 	(    echo '################################################################################' && \
 	 sed 's/.*/# &/g' $$< && \
@@ -43,7 +45,7 @@ define ext_type_rules
 %.$(1): %.txt
 	$($(2)_rules)
 endef
-$(foreach ext,$(exts),$(foreach type,$(types),$(eval $(call ext_type_rules,$(ext),$(type)))))
+$(foreach type,$(types),$(foreach ext,$($(type)_exts),$(eval $(call ext_type_rules,$(ext),$(type)))))
 
 define ext_rules
 $(1): $(patsubst %.txt,%.$(1),$(txts))
