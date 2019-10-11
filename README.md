@@ -1,5 +1,5 @@
-wtsi-software-policy
-====================
+wsi-software-policy
+===================
 
 LaTeX source for the WTSI software policy and boilerplate headers. 
 
