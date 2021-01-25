@@ -1,7 +1,7 @@
 wsi-software-policy
 ===================
 
-LaTeX source for the WTSI software policy and boilerplate headers. 
+WSI software policy and boilerplate headers. 
 
 How to use boilerplate headers
 ------------------------------
