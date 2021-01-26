@@ -16,7 +16,7 @@ Research Ltd (GRL) unless it falls under a general or specific exception
 (see [Exceptions](#exceptions)).  A copyright notice must be included
 along with all source code indicating that GRL is a copyright holder
 (normally this would be included near the top of each source code file
-in a comment block; see section [Copyright](#copyright) for best
+in a comment block; see section [Copyright](#impnotes.copyright) for best
 practices on how to indicate copyright).
 
 ### Scope
@@ -38,7 +38,7 @@ Software under GRL copyright that directly supports published work
 authored by GRL employees (e.g. software implementing methods described
 in a methods paper or software presented in an application note) must be
 released publicly using an acceptable free software license (see section
-[Licenses](*policy.licences)) by the time of the related publication at
+[Licenses](#policy.licences)) by the time of the related publication at
 the very latest.
 
 Useful and potentially reusable software under GRL copyright that
@@ -69,7 +69,7 @@ Free Software Foundation's definition.
 Prior to distributing a particular piece of software outside the
 Institute for the first time (including sending privately to an external
 collaborator or developing code in public such as by using
-<http://github.com/> or <http://sourceforge.net/> for source control),
+<https://github.com/> or <https://sourceforge.net/> for source control),
 the original author(s) should, in conjunction with their line
 management, choose a free software license and apply it to the source
 code according to the best practices for that particular license.
@@ -129,7 +129,7 @@ question.
 In general, it is good development practice to reuse code when possible,
 and in many cases there are good free software libraries that are
 available for incorporation into other software. The use of such
-libraries is encouraged -- however, staff should not take code from
+libraries is encouraged — however, staff should not take code from
 other sources and incorporate it into software under GRL copyright
 (whether by direct copying, some derivation or translation, or even
 linking), unless:
@@ -166,7 +166,7 @@ regard).
 
 ## <a name="exceptions.general"></a>General exceptions to copyright assignment
 
-The [Copyright section](*policy.copyright) requires that staff assign
+The [Copyright section](#policy.copyright) requires that staff assign
 copyright in software they create to GRL. This section describes general
 exceptions to that requirement which do not require any special
 permission outside of this policy itself.
@@ -181,7 +181,7 @@ permission outside of this policy itself.
    complex legal question and is outside the scope of this policy. Staff who
    are uncertain whether software they are developing or have developed is a
    work made for hire should seek legal advice or obtain a specific exception
-   (see [Special Exceptions](*exceptions.special)) for the avoidance of any
+   (see [Special Exceptions](#exceptions.special)) for the avoidance of any
    doubt.
 
  * Uncopyrightable code
@@ -209,7 +209,7 @@ be contributed back to the third party maintainer so that others can
 benefit from the modifications.  In many cases, this can be done within
 the constraints of this policy by simply assigning copyright in the
 modified code to GRL and providing the modified code under one of the
-[acceptable licenses](*policy.licenses).
+[acceptable licenses](#policy.licenses).
 
   However, in some cases the third-party may not be willing to accept
 contributions without assigning copyright to them (this is likely to be
@@ -243,10 +243,10 @@ something to the effect of:
 it to the project
 
   However, if a third-party requires a document signed by the employer,
-staff should obtain a [specific exception](*exceptions.special) and ask
+staff should obtain a [specific exception](#exceptions.special) and ask
 for a letter signed by the Chief Operating Officer
 
-## <a href="exceptions.special"></a>Specific exceptions to copyright assignment
+## <a name="exceptions.special"></a>Specific exceptions to copyright assignment
 
 If a staff member wishes to develop software in the general area of
 his/her work but does not want to assign copyright to GRL, this should
@@ -270,9 +270,9 @@ it is also possible to request a signed letter from the Chief Operating
 Office if that is required (e.g. for a third-party organisation's
 records).
 
-# <a href="impnotes"></a>Implementation notes
+# <a name="impnotes"></a>Implementation notes
 
-## <a href="impnotes.copyright"></a>How to indicate copyright
+## <a name="impnotes.copyright"></a>How to indicate copyright
 
 To assign copyright in software source code to GRL, a copyright notice
 should be included within its source code (normally within a comment
@@ -298,7 +298,7 @@ The copyright notice should be of the form:
 
     Copyright (C) <YEARS> Genome Research Ltd.
 
-Where YEARS> should include the list of years in which copyrightable
+Where \<YEARS\> should include the list of years in which copyrightable
 contributions were made to the software. Each such year should be listed
 individually and separated by commas. A range of years (separated by
 dashes) should ideally not be used as it tends to lead to confusion and
@@ -306,7 +306,7 @@ mistakes. If a range of years is used in any source file, a notice must
 be included in the documentation that indicates that the range of years
 should be interpreted as being equivalent to a list of years from the
 first to the last and including each consecutive year in between (see
-[appendix](*appendix:range.of.years)).
+[appendix](#appendix.range.of.years)).
 
 ### Modifications to existing code
 
@@ -342,7 +342,7 @@ domain dedication).
 
 Note that it is important to comply with the terms of license under
 which original source files are received from external sources (see
-[Policy Protection](*policy.protection)). In some cases that may limit
+[Policy Protection](#policy.protection)). In some cases that may limit
 under which license(s) it is acceptable to distribute a combined work
 including that original source code and other code. In some instances,
 it may not  be possible to combine arbitrary third-party code into a
@@ -361,7 +361,7 @@ under which the combined work is distributed.
 
 Each staff member who makes copyrightable contributions to a source file
 should include their own name in the file, usually on an "Author" line
-in the same comment block as the copyright notice and license text).
+in the same comment block as the copyright notice and license text.
 Staff members may also choose to include an email address to aid in
 identifying and contacting them in the future, should any issues arise
 regarding the copyright status of the work. In addition, it is good
@@ -374,7 +374,7 @@ any copyright notices they may add as appropriate).
 The purpose of these records is twofold:
 
 * To assist with any legal challenges to the copyright status of the code
-within each file (see [Policy Protection](*policy.protection))
+within each file (see [Policy Protection](#policy.protection))
 
 * to recognise the set of individuals who contributed to the work, in
 much the same way an author list on a peer-reviewed paper acknowledges
@@ -427,9 +427,9 @@ usually this is included in a file called `LICENSE` or `COPYING`
 
 Boilerplate templates that can be used (with the addition of appropriate
 comment characters) to begin a new source code file under each of the
-recommended licenses (see [Recommended](*impnotes.recommended) section)
-can be found in the [Appendix](*appendix:boilerplate). For other free
-software licenses, use the general format of these boilerplate (i.e.
+recommended licenses (see [Recommended licenses](#impnotes.recommended) section)
+can be found in the [Appendix](#appendix.boilerplate). For other free
+software licenses, use the general format of these boilerplates (i.e.
 copyright notice first, then author records, then license instructions)
 but follow the guidelines for applying the license as specified by the
 license authors.
@@ -489,11 +489,11 @@ probably not required as permission would be required to claim any
 endorsement, so functionally the MIT and mBSD licenses are equivalent.
 Both of those licenses are so short that the full license text should be
 included near the top of each and every source code file (see [Appendix
-Boilerplate](*appendix:boilerplate) and [Appendix
-examples](*appendix:examples)) for boilerplate templates and examples).
+Boilerplate](#appendix.boilerplate) and [Appendix
+examples](#appendix.examples)) for boilerplate templates and examples).
 These licenses are compatible with most other free software licenses
-(including the recommended copyleft licenses; see [Recommended
-Licenses](*section:impnotes.recommended.copyleft)) -- this means that a
+(including the recommended copyleft licenses; see [Copyleft
+licenses](#impnotes.recommended.copyleft)) — this means that a
 licensee of software conveyed to them under MIT or mBSD licenses can be
 redistributed under the terms of another license such as the GPL.
 
@@ -534,7 +534,7 @@ computer network (if the modified software supports such interaction) at
 no charge (_strong network copyleft_)
 
 If the 1st requirement is required but the 2nd and 3rd requirements are
-*not*, a licensee would be free to use the code as a component of a
+**not**, a licensee would be free to use the code as a component of a
 larger project (e.g. by linking) and could distribute that larger
 project as a whole under any terms they wish.
 
@@ -625,7 +625,7 @@ copyright is owned by GRL) should be corrected. Please note that it is
 possible that some staff have historically had employment contracts that
 do not require them to assign copyright, and in that case personal
 copyright notices must be preserved (see [third
-party](*section:impnotes.oldcode.thirdparty)).
+party](#impnotes.oldcode.thirdparty)).
 
 If the latest publicly available version of existing software is one in
 which copyright notices and/or licensing statements have been omitted
@@ -652,7 +652,7 @@ original year of creation).
 If the latest release does not include any license whatsoever, it is
 acceptable for staff to treat it as if it had not yet been publicly
 released, decide on an initial license, and release a new version under
-that license (see [Licences](*policy.licenses)).
+that license (see [Licences](#policy.licenses)).
 
 If the software includes a license which is not acceptable or contains
 multiple incompatible licenses, Ti.Com should be informed and should
@@ -710,7 +710,7 @@ See the [boilerplate](boilerplate) subdirectory for examples.
 
 Note: Including the email address (`EMAIL`) is optional.
 
-## <a name="appendix:range.of.years"></a> Note regarding range of years to include in documentation as needed
+## <a name="appendix.range.of.years"></a> Note regarding range of years to include in documentation as needed
 
 The [range-of-years.txt](docnotes/range-of-years.txt) boilerplate should
 be included somewhere in the documentation distributed with the software
@@ -719,10 +719,7 @@ syntax in place of a comma-delimited list of years. This note need not
 be at the start of the documentation file, but must be included
 somewhere in the documentation.
 
-<docnotes/range-of-years.txt>
-
-
-## <a name="appendix:examples"></a> Examples
+## <a name="appendix.examples"></a> Examples
 
 Examples can be found in the [examples](examples) subdirectory
 
