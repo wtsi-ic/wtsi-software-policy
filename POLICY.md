@@ -3,7 +3,7 @@
 
 Authors: WSI Technical Informatics Committee (Ti.Com)
 
-Date: 9th October 2019
+Date: 26th January 2021
 
 # Policy requirements
 ## <a name="policy.copyright"></a> Assign copyright to Genome Research Ltd
