@@ -5,8 +5,30 @@ Authors: WSI Technical Informatics Committee (Ti.Com)
 
 Date: 26th January 2021
 
+Contents
+* [Policy](#policy)
+    * [Copyright Assignment](#policy.copyright)
+    * [Software Release Timing](#policy.release)
+    * [Acceptable Licences](#policy.licences)
+    * [Respect Copyright, and Protect GRL Copyright](#policy.protection)
+* [Exceptions](*exceptions)
+    * [General Exceptions to Copyright Assignment](#exceptions.general)
+    * [Specific Exceptions to Copyright Assignment](#exceptions.special)
+* [Implementation Notes](#impnotes)
+    * [How to indicate copyright](#impnotes.copyright)
+    * [Authorship Records](#impnotes.records)
+    * [Applying a Licence](#impnotes.licence)
+    * [Recommended Licences](#impnotes.recommended)
+        * [Permissive Licences](#impnotes.recommended.permissive)
+        * [Restrictive (Copyleft) Licences](#impnotes.recommended.copyleft)
+    * [Translation and Commercial Considerations](#impnotes.commercial)
+    * [Old code](#impnotes.oldcode)
+* [Non-compliance](#policy.copyright.risks)
+
+
+
 # Policy requirements
-## <a name="policy.copyright"></a> Assign copyright to Genome Research Ltd
+## <a name="policy.copyright"></a> Copyright assignment to Genome Research Ltd
 
 It is a condition of employment and of being granted visiting worker
 status at the Wellcome Sanger Institute (the Institute) that software
@@ -32,26 +54,26 @@ certain that software they develop falls under an exception, they are
 advised to either assign copyright in all software they write to GRL or
 to obtain a specific exception to retain or assign copyright otherwise.
 
-## Release publicly in advance of publication
+## <a name="policy.release"></a>Software release timing
 
 Software under GRL copyright that directly supports published work
 authored by GRL employees (e.g. software implementing methods described
 in a methods paper or software presented in an application note) must be
-released publicly using an acceptable free software license (see section
+released publicly using an acceptable free software licence (see section
 [Licenses](#policy.licences)) by the time of the related publication at
 the very latest.
 
 Useful and potentially reusable software under GRL copyright that
 represents a substantial portion of the analysis and/or processing that
 went into producing results presented in a research paper should also be
-released publicly using an acceptable license by the time the research
+released publicly using an acceptable licence by the time the research
 paper is published.
 
 
-## <a name="policy.licenses"></a> Acceptable Licences
+## <a name="policy.licences"></a> Acceptable Licences
 
 Software under GRL copyright may be distributed outside of the Institute
-under any free software license as defined by the Free Software
+under any free software licence as defined by the Free Software
 Foundation (FSF). A rough definition of free software is that it gives
 the users
 
@@ -60,9 +82,9 @@ the software
 
 For a more complete definition please refer to the [FSF
 definition](http://www.gnu.org/philosophy/free-sw.html). An incomplete
-list of free software licenses (which are acceptable) as well as
-non-free software licenses (which are not acceptable) can be found at:
-<http://www.gnu.org/licenses/license-list.html>. Other licenses may be
+list of free software licences (which are acceptable) as well as
+non-free software licences (which are not acceptable) can be found at:
+<http://www.gnu.org/licenses/license-list.html>. Other licences may be
 acceptable as well, provided they meet the requirements listed in the
 Free Software Foundation's definition.
 
@@ -71,23 +93,23 @@ Institute for the first time (including sending privately to an external
 collaborator or developing code in public such as by using
 <https://github.com/> or <https://sourceforge.net/> for source control),
 the original author(s) should, in conjunction with their line
-management, choose a free software license and apply it to the source
-code according to the best practices for that particular license.
+management, choose a free software licence and apply it to the source
+code according to the best practices for that particular licence.
 
 See section [Recommended Licences](#impnotes.recommended) for a set of
-recommended licenses along with best practices for applying them). Staff
-do not have to choose one of the recommended licenses, but if they do
-not, they must make sure that it is a free software license, that they
-understand the requirements of the license, and that it is correctly
+recommended licences along with best practices for applying them). Staff
+do not have to choose one of the recommended licences, but if they do
+not, they must make sure that it is a free software licence, that they
+understand the requirements of the licence, and that it is correctly
 applied to the source code in a manner consistent with this policy.
 
 Staff must make each subsequent releases of a particular piece of
-software under the same license as the previous release, unless the
-terms of the previous release's license would permit the recipients to
-redistribute modified code under a different license, in which case a
-subsequent release may be distributed by staff under that license (i.e.
-it is acceptable to change to a license compatible with the previous
-license and staff are not more restricted in this regard than those they
+software under the same licence as the previous release, unless the
+terms of the previous release's licence would permit the recipients to
+redistribute modified code under a different licence, in which case a
+subsequent release may be distributed by staff under that licence (i.e.
+it is acceptable to change to a licence compatible with the previous
+licence and staff are not more restricted in this regard than those they
 convey the software to). The reason for this restriction is primarily to
 prevent staff with limited or no involvement in a software project from
 releasing that software under terms that might conflict with the
@@ -95,26 +117,26 @@ intentions of the original authors or undermine potential
 commercialisation opportunities for GRL.
 
 Any staff member(s) who wish to re-release software which is under GRL
-copyright under a new license not compatible with the previous release
+copyright under a new licence not compatible with the previous release
 should apply to Ti.Com for permission to release it under a different
-license (this would include other acceptable free software licenses as
-well as alternative licenses that otherwise would not be acceptable,
+licence (this would include other acceptable free software licences as
+well as alternative licences that otherwise would not be acceptable,
 including non-free licensing agreements). Ti.Com's primary interest in
 considering such an application should be to ensure that the proposed
-license is appropriate and that it serves well the interests of the
+licence is appropriate and that it serves well the interests of the
 Institute and the wider community. Ti.Com should also ensure that all
 relevant stakeholders (including staff involved in the creation of the
 software) are consulted and will involve the Head of Legal if necessary
-to ascertain whether the change of license could effect
+to ascertain whether the change of licence could effect
 commercialisation arrangements.
 
 A significant advantage for staff members in releasing code publicly and
-under free licenses is that it guarantees indefinite access to their
+under free licences is that it guarantees indefinite access to their
 work, even if they move to another institute. There have been notable
 examples in academia where individuals have been unable to continue
 working on software that they wrote because of licensing restrictions,
 and this policy avoids that outcome by allowing all software to be made
-publicly available under a free software license.
+publicly available under a free software licence.
 
 
 ## <a name="policy.protection"></a>Respect copyright and protect GRL copyright
@@ -134,10 +156,10 @@ other sources and incorporate it into software under GRL copyright
 (whether by direct copying, some derivation or translation, or even
 linking), unless:
 
- 1. it is allowed under the terms of license offered by the copyright
+ 1. it is allowed under the terms of licence offered by the copyright
 holders; and
 
- 2. all requirements of that license are met.
+ 2. all requirements of that licence are met.
 
 Due to a lack of a principle of fair use that applies world-wide, staff
 should not rely upon any fair use provisions of copyright law as the
@@ -209,7 +231,7 @@ be contributed back to the third party maintainer so that others can
 benefit from the modifications.  In many cases, this can be done within
 the constraints of this policy by simply assigning copyright in the
 modified code to GRL and providing the modified code under one of the
-[acceptable licenses](#policy.licenses).
+[acceptable licences](#policy.licences).
 
   However, in some cases the third-party may not be willing to accept
 contributions without assigning copyright to them (this is likely to be
@@ -340,18 +362,18 @@ are based on that earlier work which was placed into the public domain
 (give the name of the author and include a copy of their written public
 domain dedication).
 
-Note that it is important to comply with the terms of license under
+Note that it is important to comply with the terms of licence under
 which original source files are received from external sources (see
 [Policy Protection](#policy.protection)). In some cases that may limit
-under which license(s) it is acceptable to distribute a combined work
+under which licence(s) it is acceptable to distribute a combined work
 including that original source code and other code. In some instances,
 it may not  be possible to combine arbitrary third-party code into a
 combined work without violating the licensing terms of at least one of
 them (for example, GPLv2 code cannot be combined with Apache 2.0 code),
-so it is important to be aware of any license restrictions before
+so it is important to be aware of any licence restrictions before
 starting to use third-party source code or libraries.  Note that it is
 possible to combine material available under multiple different
-third-party licenses provided they are all compatible with the license
+third-party licences provided they are all compatible with the licence
 under which the combined work is distributed.
 
 <http://www.softwarefreedom.org/resources/2007/gpl-non-gpl-collaboration.html>
@@ -361,7 +383,7 @@ under which the combined work is distributed.
 
 Each staff member who makes copyrightable contributions to a source file
 should include their own name in the file, usually on an "Author" line
-in the same comment block as the copyright notice and license text.
+in the same comment block as the copyright notice and licence text.
 Staff members may also choose to include an email address to aid in
 identifying and contacting them in the future, should any issues arise
 regarding the copyright status of the work. In addition, it is good
@@ -387,39 +409,39 @@ individual file and should never be modified except to correct actual errors.
 Licenses chosen for distribution should require recipients to preserve
 authorship records in any versions they redistribute.
 
-## Applying a license
+## <a name="impnotes.licence"></a>Applying a licence
 
 In addition to the copyright notices which are required to be included
 in each source code file regardless of whether or not software is ever
 distributed outside the institute, any software that is distributed
 outside the Institute must have one of the acceptable free software
-licenses applied to any code under GRL copyright so that it is clear to
-recipients what the license terms are under which they are receiving the
+licences applied to any code under GRL copyright so that it is clear to
+recipients what the licence terms are under which they are receiving the
 software.
 
 A statement must be added to each source code file following the
-copyright notice and author record and indicating under which license(s)
+copyright notice and author record and indicating under which licence(s)
 the code is available and under what terms it can be copied, modified,
-and redistributed.  In the case of short licenses (including any of the
-recommended permissive licenses) the best way to do that is to include
-the full text of the license in each source file. Other licenses
-(including all of the recommended copyleft licenses) have a much longer
-license document which would not be reasonable to include within each
-source file. For such licenses, a copying permission statement should be
-included in each source file in place of the actual license, and that
-statement should indicate what license applies and where the licensee
-can find a copy of that license. The authors of the license will
+and redistributed.  In the case of short licences (including any of the
+recommended permissive licences) the best way to do that is to include
+the full text of the licence in each source file. Other licences
+(including all of the recommended copyleft licences) have a much longer
+licence document which would not be reasonable to include within each
+source file. For such licences, a copying permission statement should be
+included in each source file in place of the actual licence, and that
+statement should indicate what licence applies and where the licensee
+can find a copy of that licence. The authors of the licence will
 normally provide an appropriate statement or template to be used for
 that purpose.
 
 In addition, it is good practice to take additional steps to make the
-license terms clear to users who may not be accustomed to reading the
+licence terms clear to users who may not be accustomed to reading the
 source code to software they obtain:
 
 *  state on any web pages providing access to the software under which
-license it is available
+licence it is available
 
-*  provide the full text of the license in the root directory of any
+*  provide the full text of the licence in the root directory of any
   distribution (including a source code or binary distribution) --
 usually this is included in a file called `LICENSE` or `COPYING`
 
@@ -427,20 +449,20 @@ usually this is included in a file called `LICENSE` or `COPYING`
 
 Boilerplate templates that can be used (with the addition of appropriate
 comment characters) to begin a new source code file under each of the
-recommended licenses (see [Recommended licenses](#impnotes.recommended) section)
+recommended licences (see [Recommended licences](#impnotes.recommended) section)
 can be found in the [Appendix](#appendix.boilerplate). For other free
-software licenses, use the general format of these boilerplates (i.e.
-copyright notice first, then author records, then license instructions)
-but follow the guidelines for applying the license as specified by the
-license authors.
+software licences, use the general format of these boilerplates (i.e.
+copyright notice first, then author records, then licence instructions)
+but follow the guidelines for applying the licence as specified by the
+licence authors.
 
 
-## <a name="impnotes.recommended"></a>Recommended licenses
+## <a name="impnotes.recommended"></a>Recommended licences
 
-Different free software licenses impose different restrictions on how recipients
+Different free software licences impose different restrictions on how recipients
 of the software can use, modify, and redistribute the code.
 
-All of the free software licenses we recommend share the requirement
+All of the free software licences we recommend share the requirement
 that a recipient of the code (the licensee) must maintain copyright,
 attribution, and disclaimer statements in any versions of the source
 code and binaries which they redistribute.  They also all include a
@@ -450,70 +472,70 @@ copyright holders if the software causes any unintentional harm to the
 licensee. Licenses that share these properties should be chosen whenever
 possible.
 
-## <a name="impnotes.recommended.permissive"></a>Permissive licenses
+## <a name="impnotes.recommended.permissive"></a>Permissive licences
 
-Some licenses (permissive licenses) don't include many additional
+Some licences (permissive licences) don't include many additional
 restrictions on the licensee. In practice, this means that under a
-permissive license the licensee is allowed to take the code, combine it
+permissive licence the licensee is allowed to take the code, combine it
 with their own software, modify it to include additional functionality,
-and sell it to others under another license terms (including nonfree
-licenses) without sharing the source code of the software (or their
+and sell it to others under another licence terms (including nonfree
+licences) without sharing the source code of the software (or their
 changes) with anyone.
 
-These licenses may be a good choice when:
+These licences may be a good choice when:
 
-* there is little or no potential for paid-license commercialisation (because being available under a permissive license undermines
-the business case for a paid license), or when the benefits of being permissive outweigh
+* there is little or no potential for paid-licence commercialisation (because being available under a permissive licence undermines
+the business case for a paid licence), or when the benefits of being permissive outweigh
 the benefits from any potential commercialisation; and
 
 * substantial development is not expected to occur outside of the Institute, and if it does, it is acceptable that modified versions may not be made available.
 
-Because the license terms are more permissive, software under permissive
-licenses might tend to get more use (especially within companies) than
-software under more restrictive free licenses, so it might be a good
+Because the licence terms are more permissive, software under permissive
+licences might tend to get more use (especially within companies) than
+software under more restrictive free licences, so it might be a good
 choice if the most important factor is to have the software used as
 widely as possible (for example, software which serves as the reference
 implementation for a data format standard).
 
-Permissive licenses that are recommended for use include:
+Permissive licences that are recommended for use include:
 
 * Apache License, Version 2.0 (Apache) <https://www.gnu.org/licenses/license-list.html#apache2>
 * Expat License (MIT) <https://www.gnu.org/licenses/license-list.html#Expat>
 * Modified BSD license (mBSD) <https://www.gnu.org/licenses/license-list.html#ModifiedBSD>
 
-The MIT license and mBSD license are quite similar permissive licenses
-except that the mBSD license explicitly prohibits the use of the name of
+The MIT licence and mBSD licence are quite similar permissive licences
+except that the mBSD licence explicitly prohibits the use of the name of
 the copyright holder to endorse or promote products derived from the
 software without permission. However, that explicit statement is
 probably not required as permission would be required to claim any
-endorsement, so functionally the MIT and mBSD licenses are equivalent.
-Both of those licenses are so short that the full license text should be
+endorsement, so functionally the MIT and mBSD licences are equivalent.
+Both of those licences are so short that the full licence text should be
 included near the top of each and every source code file (see [Appendix
 Boilerplate](#appendix.boilerplate) and [Appendix
 examples](#appendix.examples)) for boilerplate templates and examples).
-These licenses are compatible with most other free software licenses
-(including the recommended copyleft licenses; see [Copyleft
-licenses](#impnotes.recommended.copyleft)) — this means that a
-licensee of software conveyed to them under MIT or mBSD licenses can be
-redistributed under the terms of another license such as the GPL.
+These licences are compatible with most other free software licences
+(including the recommended copyleft licences; see [Copyleft
+licences](#impnotes.recommended.copyleft)) — this means that a
+licensee of software conveyed to them under MIT or mBSD licences can be
+redistributed under the terms of another licence such as the GPL.
 
-The Apache license is also fairly permissive, but offers additional
+The Apache licence is also fairly permissive, but offers additional
 protections to the in the form of patent termination and indemnification
 clauses. This basically means that the copyright holders automatically
-grant the licensee a royalty-free patent license such that using the
+grant the licensee a royalty-free patent licence such that using the
 software would never be considered patent infringement. It also
-terminates those automatic patent licenses if the licensee files a
+terminates those automatic patent licences if the licensee files a
 lawsuit against anyone claiming that the software infringes on their
-patents. The Apache license is therefore a good choice for a permissive
-license, although it is important to note that those additional
-provisions make it less compatible with other licenses. In particular,
-it is not possible to combine code under a GPLv2 license (without the
-"or later version" clause) and the Apache license, whereas this can be
-done with the MIT or mBSD licenses.
+patents. The Apache licence is therefore a good choice for a permissive
+licence, although it is important to note that those additional
+provisions make it less compatible with other licences. In particular,
+it is not possible to combine code under a GPLv2 licence (without the
+"or later version" clause) and the Apache licence, whereas this can be
+done with the MIT or mBSD licences.
 
-## <a name="impnotes.recommended.copyleft"></a>Copyleft licenses
+## <a name="impnotes.recommended.copyleft"></a>Copyleft licences
 
-Other licenses (copyleft licenses) place additional restrictions on what
+Other licences (copyleft licences) place additional restrictions on what
 the licensee is allowed to do, generally in the interest of ensuring
 that the code, and any modifications to the code, continues to stay
 free.
@@ -521,9 +543,9 @@ free.
 Three common copyleft restrictions are:
 
 1. the licensee is additionally required to distribute any modified versions of
-the source code under the same license terms (_weak copyleft_)
+the source code under the same licence terms (_weak copyleft_)
 
-1. the licensee is required to adopt the same license for any additional
+1. the licensee is required to adopt the same licence for any additional
 code that it is combined with to create a single piece of software
 (_strong copyleft_)
 
@@ -543,7 +565,7 @@ these terms, the licensee would have to make those modifications
 available to anyone to whom they convey the source code.  Choosing this
 combination of options is most often done when the project is a software
 library (e.g. biojava, bioperl) and the authors wish to ensure all
-library code is distributed under the same license, but want the library
+library code is distributed under the same licence, but want the library
 as a whole to be as widely used as possible, so do not want to restrict
 what software it is used as a component of.
 
@@ -580,45 +602,45 @@ required to provide the full source code for the version of software
 that they provide for their customers to run (including any
 modifications they have made) to any customers who interacts with the
 service to analyse data. If the genomic analysis software had been
-licensed under GPL or a less restrictive license, the cloud service
+licensed under GPL or a less restrictive licence, the cloud service
 would be permitted to modify the software and to run their modified
 version on customer data without providing them with the source code for
 those changes or even informing them of what changes have been made.
 
-## Translation & commercialisation considerations
+## <a name="impnotes.commercial"></a>Translation & commercialisation considerations
 
-None of the free software licenses are exclusive licenses, so it is
-possible for copyright holder(s) to license software under a nonfree
-commercial license that is also available publicly under a free software
-license, although in that case the more restrictive copyleft licenses
+None of the free software licences are exclusive licences, so it is
+possible for copyright holder(s) to license software under a non-free
+commercial licence that is also available publicly under a free software
+licence, although in that case the more restrictive copyleft licences
 (such as the GPL or AGPL) may offer a better business proposition for a
-"paid license" form of commercialisation than would a more permissive
-license (such as mBSD or Apache). On the other hand, the more permissive
-licenses may tend to result in more widespread use, especially within
+"paid licence" form of commercialisation than would a more permissive
+licence (such as mBSD or Apache). On the other hand, the more permissive
+licences may tend to result in more widespread use, especially within
 commercial organisations, and that could result in a larger potential
 customer base for a "paid support" style of commercialisation.
 
 If software includes code with copyright from multiple parties (e.g. if
 GRL copyright applies only to some portions of the software but other
 organisations and/or individuals also hold a copyright in some
-portions), the license can only be changed to an incompatible license by
+portions), the licence can only be changed to an incompatible licence by
 agreement of all copyright holders. Staff interested in potential
 commercialisation of GRL software after an initial public release should
-think carefully about what license to choose in order to best facilitate
+think carefully about what licence to choose in order to best facilitate
 potential commercialisation opportunities, as well as the potential need
 for project-level policies regarding accepting contributions from
 third-parties (e.g. they may want to ask any third-party contributors to
 assign copyright in their contributions to GRL).
 
 
-# <a name="impnotes.oldcode"></a> Code not conforming to these conditions
+## <a name="impnotes.oldcode"></a> Code not conforming to these conditions
 
-## <a name="impnotes.oldcode.grlcopyright"></a>Software written entirely by staff
+### <a name="impnotes.oldcode.grlcopyright"></a>Software written entirely by staff
 
 Any software written entirely by staff that is distributed publicly
 (e.g. on the Institute's web or ftp sites, on Institute-affiliated
 GitHub repositories, etc) should contain GRL copyright notices and an
-acceptable free software license as required by this policy (unless a
+acceptable free software licence as required by this policy (unless a
 specific exception has been granted).  Copyright notices that are
 incorrect (e.g. staff claimed a personal copyright when in fact the
 copyright is owned by GRL) should be corrected. Please note that it is
@@ -630,7 +652,7 @@ party](#impnotes.oldcode.thirdparty)).
 If the latest publicly available version of existing software is one in
 which copyright notices and/or licensing statements have been omitted
 from some or all source code files, then this policy should be applied
-to that software and the notices and license text added as appropriate
+to that software and the notices and licence text added as appropriate
 to bring it into line with this policy (it is acceptable to make a new
 release of the software that is compliant while keeper older
 noncompliant releases available for download for historical/archival
@@ -649,14 +671,14 @@ year(s) involved (i.e. if the original date the file was created is
 known, but it is not clear when it was modified, include at least that
 original year of creation).
 
-If the latest release does not include any license whatsoever, it is
+If the latest release does not include any licence whatsoever, it is
 acceptable for staff to treat it as if it had not yet been publicly
-released, decide on an initial license, and release a new version under
-that license (see [Licences](#policy.licenses)).
+released, decide on an initial licence, and release a new version under
+that licence (see [Acceptabe Licences](#policy.licences)).
 
-If the software includes a license which is not acceptable or contains
-multiple incompatible licenses, Ti.Com should be informed and should
-decide an appropriate license to apply to the software as a whole.
+If the software includes a licence which is not acceptable or contains
+multiple incompatible licences, Ti.Com should be informed and should
+decide an appropriate licence to apply to the software as a whole.
 
 ## <a name="impnotes.oldcode.thirdparty"></a>Software including third-party code
 
@@ -666,15 +688,15 @@ handled carefully. If it can be determined what contributions were
 written by staff as opposed to third parties, any missing GRL copyright
 notices should be added alongside third-party copyright notices.
 
-The license status of each piece of code not under GRL copyright should
+The licence status of each piece of code not under GRL copyright should
 be determined, and the entire package should only be released under a
-license that is compatible with the terms of all individual licenses. If
-the licenses are incompatible, further distribution of the software
+licence that is compatible with the terms of all individual licences. If
+the licences are incompatible, further distribution of the software
 should be stopped until the situation can be resolved. It may be
 necessary to remove some component of the software in order to legally
 release such software, although in some cases it may also be possible to
 contact the copyright holder for one or more of the components and
-obtain a different license for the code.
+obtain a different licence for the code.
 
 # <a name="policy.copyright.risks"></a> Risks of non-compliance
 
@@ -682,7 +704,7 @@ Failing to comply with this policy may put the Institute's legal
 position with respect to its intellectual property at risk and could
 undermine our ability to protect the substantial investment we have made
 in software development, including the protection of works made
-available under free software licenses and those involved in commercial
+available under free software licences and those involved in commercial
 partnerships.
 
 In addition, distribution of software by staff in a manner not
@@ -695,7 +717,7 @@ hire for the Institute would be a misrepresentation of the facts and
 could potentially be considered a form of fraud.  In that case anyone
 harmed by the false statement (such as other contributors to the
 software or those who have received and used it under an invalid
-license) could potentially sue the responsible staff member for damages.
+licence) could potentially sue the responsible staff member for damages.
 Staff should also be aware that making false copyright claims is illegal
 in some jurisdictions, and so knowingly doing so could expose the staff
 member to the possibility of criminal prosecution.
