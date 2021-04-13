@@ -199,7 +199,7 @@ permission outside of this policy itself.
    connected with their work at the Institute or with the business of the
    institute, it would probably not be considered a work made for hire and
    therefore would not be subject to this policy. Whether or not a particular
-   software project would or would not be considered a work made for hire is
+   software project would or would not be considered a work made for hire is a
    complex legal question and is outside the scope of this policy. Staff who
    are uncertain whether software they are developing or have developed is a
    work made for hire should seek legal advice or obtain a specific exception
@@ -289,7 +289,7 @@ whom it is acceptable to assign copyright in lieu of assigning it to
 GRL. Permission in the form of an email from the Ti.Com secretary would
 suffice as written permission for the purposes of this policy, although
 it is also possible to request a signed letter from the Chief Operating
-Office if that is required (e.g. for a third-party organisation's
+Officer if that is required (e.g. for a third-party organisation's
 records).
 
 # <a name="impnotes"></a>Implementation notes
